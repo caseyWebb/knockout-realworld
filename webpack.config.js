@@ -1,0 +1,64 @@
+'use strict'
+
+const path = require('path')
+const HappyPack = require('happypack')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const PRODUCTION = process.env.NODE_ENV === 'production'
+
+module.exports = {
+  context: __dirname,
+  entry: path.join(__dirname, 'src/index.ts'),
+  output: {
+    filename: 'entry.js',
+    path: path.join(__dirname, 'dist'),
+    publicPath: PRODUCTION
+      ? '/knockout-realworld/' // gh-pages
+      : '/'                   // development server
+  },
+  devtool: PRODUCTION
+    ? 'source-map'
+    : 'inline-source-map',
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        loader: 'happypack/loader?id=ts'
+      },
+      {
+        test: /\.html$/,
+        exclude: /node_modules/,
+        loader: 'html-loader'
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['.ts', '.js']
+  },
+  plugins: [
+    new HappyPack({
+      id: 'ts',
+      threads: 2,
+      loaders: [
+        {
+          path: 'ts-loader',
+          query: {
+            happyPackMode: true,
+            compilerOptions: {
+              target: 'es5'
+            }
+          }
+        }
+      ]
+    }),
+    new ForkTsCheckerWebpackPlugin({
+      checkSyntacticErrors: true
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      hash: true
+    })
+  ]
+}
