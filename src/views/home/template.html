@@ -43,7 +43,8 @@
                 <i class="ion-heart"></i> {{favoritesCount}}
               </button>
             </div>
-            <a href="" class="preview-link">
+            <!-- Set in ArticleModel -->
+            <a data-bind="path: path" class="preview-link">
               <h1>{{title}}</h1>
               <p>{{description}}</p>
               <span>Read more...</span>

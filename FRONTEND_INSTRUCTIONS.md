@@ -1,14 +1,14 @@
 > *Note: Delete this file before publishing your app!*
 
-### Using the hosted API
+### ✅ Using the hosted API
 
 Simply point your [API requests](https://github.com/gothinkster/realworld/tree/master/api) to `https://conduit.productionready.io/api` and you're good to go!
 
 ### Routing Guidelines
 
 - Home page (URL: /#/ )
-    - List of tags
-    - List of articles pulled from either Feed, Global, or by Tag
+    - ✅ List of tags
+    - ✅ List of articles pulled from either Feed, Global, or by Tag
     - Pagination for list of articles
 - Sign in/Sign up pages (URL: /#/login, /#/register )
     - Uses JWT (store the token in localStorage)
@@ -24,7 +24,7 @@ Simply point your [API requests](https://github.com/gothinkster/realworld/tree/m
     - Show basic user info
     - List of articles populated from author's created articles or author's favorited articles
 
-# Styles
+# ✅ Styles
 
 Instead of having the Bootstrap theme included locally, we recommend loading the precompiled theme from our CDN (our [header template](#header) does this by default):
 
@@ -96,7 +96,7 @@ Alternatively, if you want to make modifications to the theme, check out the [th
 
 ```
 
-### Footer
+### ✅ Footer
 ```html
     <footer>
       <div class="container">

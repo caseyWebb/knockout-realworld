@@ -44,7 +44,7 @@ async function registerComponents() {
           .then((config) => cb(config))
           .catch((err) => {
             const msg = `Error loading component ${name}`
-            console.error(msg)
+            console.error(msg, err)
             cb({ template: msg })
           })
       } else {

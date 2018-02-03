@@ -9,4 +9,7 @@
 export default {
   'app-footer': () => import('./app-footer'),
   'app-header': () => import('./app-header'),
-} as { [k: string]: () => Promise<KnockoutComponentTypes.Config> }
+  'article-meta': () => import('./article-meta'),
+  'comment-form': () => import('./comment-form'),
+  'comment-list': () => import('./comment-list'),
+} as { [k: string]: () => Promise<any> }

@@ -29,6 +29,8 @@ export type ArticlesParams = {
 export class ArticleModel extends DataModelConstructorBuilder
   .Mixin(APIMixin('articles/:slug'))
   <ArticleParams> {
+  
+  public path = `//article/${this.params.slug}`
 }
 
 export class ArticlesModel extends DataModelConstructorBuilder

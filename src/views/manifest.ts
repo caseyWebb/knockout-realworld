@@ -6,4 +6,5 @@
   * development server, but DO NOT add any extra functionality to this file.
   */
 
+export { default as article } from './article'
 export { default as home } from './home'
