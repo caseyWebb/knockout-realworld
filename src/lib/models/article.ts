@@ -1,4 +1,5 @@
 import { DataModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
+import Query from '@profiscience/knockout-contrib-querystring'
 import { APIMixin, TransformMixin } from 'lib/models.mixins'
 
 const PAGE_SIZE = 20
@@ -21,7 +22,7 @@ export type ArticlesParams = {
    */
   // limit: number
   // offset: number
-  tag?: string
+  tag?: KnockoutObservable<string | void> | KnockoutComputed<string | void>
   favorited?: string
 }
 
@@ -36,5 +37,5 @@ export class ArticlesModel extends DataModelConstructorBuilder
     ...data,
     articles: data.articles.map((a: any) => new ArticleModel({ slug: a.slug }, a))
   })))
-  <ArticlesParams> {
+  <ArticlesParams | KnockoutObservable<any>> {
 }

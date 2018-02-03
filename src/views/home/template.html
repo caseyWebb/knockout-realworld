@@ -16,16 +16,16 @@
             <li class="nav-item">
               <a class="nav-link" data-bind="
                 css: {
-                  active: tab() === Tab.User,
+                  active: isUserFeed,
                   disabled: !currentUser.loggedIn()
                 },
-                click: setTabHandler(Tab.User)
+                click: showUserFeed
               " href="#">Your Feed</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-bind="
-                css: { active: tab() === Tab.Global },
-                click: setTabHandler(Tab.Global)
+                css: { active: isGlobalFeed },
+                click: showGlobalFeed
               " href="#">Global Feed</a>
             </li>
           </ul>
@@ -59,7 +59,7 @@
 
           <div class="tag-list">
             {{#foreach tags.tags}}
-              <a href="" class="tag-pill tag-default">{{$data}}</a>
+              <a href="#" data-bind="click: $component.showTag.bind($component, $data)" class="tag-pill tag-default">{{$data}}</a>
             {{/foreach}}
           </div>
         </div>
