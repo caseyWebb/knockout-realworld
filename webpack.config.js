@@ -4,7 +4,7 @@ const path = require('path')
 const HappyPack = require('happypack')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
+const ScriptExtPlugin = require('script-ext-html-webpack-plugin')
 const { DefinePlugin } = require('webpack')
 
 const PRODUCTION = process.env.NODE_ENV === 'production'
@@ -14,7 +14,7 @@ const config = {
   entry: path.join(__dirname, 'src/index.ts'),
   output: {
     filename: 'entry.js',
-    chunkFilename: '[id].[chunkhash].js',
+    chunkFilename: 'chunk.[id].[chunkhash].js',
     path: path.join(__dirname, 'dist'),
     publicPath: PRODUCTION
       ? '/knockout-realworld/' // gh-pages
@@ -63,18 +63,20 @@ const config = {
       checkSyntacticErrors: true
     }),
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
-      inlineSource: 'entry.js$'
+      template: 'src/index.html'
+    }),
+    new ScriptExtPlugin({
+      async: ['entry.js'],
+      prefetch: {
+        test: /\.js$/,
+        chunks: 'async'
+      }
     }),
     new DefinePlugin({
       PRODUCTION
     })
     
   ]
-}
-
-if (PRODUCTION) {
-  config.plugins.push(new HtmlWebpackInlineSourcePlugin())
 }
 
 module.exports = config
