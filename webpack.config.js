@@ -4,15 +4,17 @@ const path = require('path')
 const HappyPack = require('happypack')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 const { DefinePlugin } = require('webpack')
 
 const PRODUCTION = process.env.NODE_ENV === 'production'
 
-module.exports = {
+const config = {
   context: __dirname,
   entry: path.join(__dirname, 'src/index.ts'),
   output: {
     filename: 'entry.js',
+    chunkFilename: '[id].[chunkhash].js',
     path: path.join(__dirname, 'dist'),
     publicPath: PRODUCTION
       ? '/knockout-realworld/' // gh-pages
@@ -62,7 +64,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      hash: true
+      inlineSource: 'entry.js$'
     }),
     new DefinePlugin({
       PRODUCTION
@@ -70,3 +72,9 @@ module.exports = {
     
   ]
 }
+
+if (PRODUCTION) {
+  config.plugins.push(new HtmlWebpackInlineSourcePlugin())
+}
+
+module.exports = config
