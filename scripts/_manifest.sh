@@ -22,7 +22,7 @@ do
   fi
 done
 echo "} as { [k: string]: () => Promise<KnockoutComponentTypes.Config> }" >> $MANIFEST
-echo "Done!\n"
+echo "Done!"
 
 MANIFEST=src/views/manifest.ts
 echo "Generating src/views/manifest.ts... \c"
@@ -35,4 +35,17 @@ do
     echo "export { default as $view } from './$view'" >> $MANIFEST
   fi
 done
-printf "Done!\n"
+echo "Done!"
+
+MANIFEST=src/lib/models/index.ts
+echo "Generating src/models/index.ts... \c"
+echo "$AUTOGEN_BANNER" > $MANIFEST
+for file in src/lib/models/*
+do
+  model=$(basename $file .ts)
+  if [ $model != 'index' ]
+  then
+    echo "export * from './$model'" >> $MANIFEST
+  fi
+done
+echo "Done!"
