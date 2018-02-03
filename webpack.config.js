@@ -4,6 +4,7 @@ const path = require('path')
 const HappyPack = require('happypack')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { DefinePlugin } = require('webpack')
 
 const PRODUCTION = process.env.NODE_ENV === 'production'
 
@@ -62,6 +63,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       hash: true
+    }),
+    new DefinePlugin({
+      PRODUCTION
     })
+    
   ]
 }

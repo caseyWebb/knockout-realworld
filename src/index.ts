@@ -19,7 +19,8 @@ ko.options.deferUpdates = true
 Router
   .setConfig({
     hashbang: true,
-    activePathCSSClass: 'active'
+    activePathCSSClass: 'active',
+    base: PRODUCTION ? '/knockout-realworld' : ''
   })
 
 Route
