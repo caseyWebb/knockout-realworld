@@ -9,8 +9,19 @@ enum Tab {
 }
 
 export default class extends ViewModelConstructorBuilder {
+  // exposes for use in template
+  public Tab = Tab
+
   public tab: KnockoutObservable<Tab> = ko.observable(Tab.Global)
   public currentUser = currentUser
   public articles = new ArticlesModel({ feed: ko.pureComputed(() => this.tab() === Tab.User) })
   public tags = new TagsModel({})
+
+  // creates click handler
+  public setTabHandler(t: Tab) {
+    return () => {
+      if (t === Tab.User && !this.currentUser.loggedIn()) return
+      this.tab(t)
+    }
+  }
 }

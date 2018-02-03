@@ -14,10 +14,19 @@
         <div class="feed-toggle">
           <ul class="nav nav-pills outline-active">
             <li class="nav-item">
-              <a class="nav-link disabled" href="">Your Feed</a>
+              <a class="nav-link" data-bind="
+                css: {
+                  active: tab() === Tab.User,
+                  disabled: !currentUser.loggedIn()
+                },
+                click: setTabHandler(Tab.User)
+              " href="#">Your Feed</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="">Global Feed</a>
+              <a class="nav-link" data-bind="
+                css: { active: tab() === Tab.Global },
+                click: setTabHandler(Tab.Global)
+              " href="#">Global Feed</a>
             </li>
           </ul>
         </div>
