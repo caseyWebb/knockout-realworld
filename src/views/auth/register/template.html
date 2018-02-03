@@ -1,0 +1,55 @@
+<div class="auth-page">
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-xs-12">
+        <h1 class="text-xs-center">Sign up</h1>
+        <p class="text-xs-center">
+          <a data-bind="path: '//login'">Have an account?</a>
+        </p>
+
+        <login-form-errors params="errors: errors"></login-form-errors>
+
+        <form>
+          <fieldset class="form-group">
+            <input
+              class="form-control form-control-lg"
+              type="text"
+              placeholder="Your Name"
+              data-bind="value: username"
+            />
+          </fieldset>
+          <fieldset class="form-group">
+            <input
+              class="form-control form-control-lg"
+              type="text"
+              placeholder="Email"
+              data-bind="value: email"
+            />
+          </fieldset>
+          <fieldset class="form-group">
+            <input
+              class="form-control form-control-lg"
+              type="password"
+              placeholder="Password"
+              data-bind="value: password"
+            />
+          </fieldset>
+          <fieldset class="form-group">
+            <input
+              class="form-control form-control-lg"
+              type="password"
+              placeholder="Confirm Password"
+              data-bind="value: passwordConfirmation"
+            />
+          </fieldset>
+          <button
+            class="btn btn-lg btn-primary pull-xs-right"
+            data-bind="click: register"
+          >
+            Sign up
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

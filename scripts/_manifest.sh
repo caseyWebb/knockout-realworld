@@ -21,7 +21,7 @@ do
     echo "  '$component': () => import('./$component')," >> $MANIFEST
   fi
 done
-echo "} as { [k: string]: () => Promise<KnockoutComponentTypes.Config> }" >> $MANIFEST
+echo "} as { [k: string]: () => Promise<any> }" >> $MANIFEST
 echo "Done!"
 
 MANIFEST=src/views/manifest.ts

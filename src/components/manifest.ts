@@ -12,4 +12,5 @@ export default {
   'article-meta': () => import('./article-meta'),
   'comment-form': () => import('./comment-form'),
   'comment-list': () => import('./comment-list'),
+  'login-form-errors': () => import('./login-form-errors'),
 } as { [k: string]: () => Promise<any> }

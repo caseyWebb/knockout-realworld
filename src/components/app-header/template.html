@@ -1,23 +1,32 @@
 <nav class="navbar navbar-light">
   <div class="container">
-    <a class="navbar-brand" data-bind="path: '/'">conduit</a>
+    <a class="navbar-brand" data-bind="path: '//'">conduit</a>
     <ul class="nav navbar-nav pull-xs-right">
       <li class="nav-item">
-        <a class="nav-link" data-bind="path: '/'">Home</a>
+        <a class="nav-link" data-bind="path: '//'">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="alert('NOT IMPLEMENTED')">
-          <i class="ion-compose"></i>&nbsp;New Post
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="alert('NOT IMPLEMENTED')">
-          <i class="ion-gear-a"></i>&nbsp;Settings
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="alert('NOT IMPLEMENTED')">Sign up</a>
-      </li>
+      {{#if currentUser.loggedIn}}
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="alert('NOT IMPLEMENTED')">
+            <i class="ion-compose"></i>&nbsp;New Post
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="alert('NOT IMPLEMENTED')">
+            <i class="ion-gear-a"></i>&nbsp;Settings
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" data-bind="click: currentUser.logout">
+            <i class="ion-log-out"></i>&nbsp;Log out
+          </a>
+        </li>
+      {{/if}}
+      {{#ifnot currentUser.loggedIn}}
+        <li class="nav-item">
+          <a class="nav-link" data-bind="path: '//register'">Sign up</a>
+        </li>
+      {{/ifnot}}
     </ul>
   </div>
 </nav>

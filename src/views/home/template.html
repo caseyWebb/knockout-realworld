@@ -11,25 +11,24 @@
     <div class="row">
 
       <div class="col-md-9">
-        <div class="feed-toggle">
-          <ul class="nav nav-pills outline-active">
-            <li class="nav-item">
-              <a class="nav-link" data-bind="
-                css: {
-                  active: isUserFeed,
-                  disabled: !currentUser.loggedIn()
-                },
-                click: showUserFeed
-              " href="#">Your Feed</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bind="
-                css: { active: isGlobalFeed },
-                click: showGlobalFeed
-              " href="#">Global Feed</a>
-            </li>
-          </ul>
-        </div>
+        {{#if currentUser.loggedIn}}
+          <div class="feed-toggle">
+            <ul class="nav nav-pills outline-active">
+              <li class="nav-item">
+                <a class="nav-link" data-bind="
+                  css: { active: isUserFeed },
+                  click: showUserFeed
+                " href="#">Your Feed</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bind="
+                  css: { active: isGlobalFeed },
+                  click: showGlobalFeed
+                " href="#">Global Feed</a>
+              </li>
+            </ul>
+          </div>
+        {{/if}}
 
         {{#foreach articles.articles}}
           <div class="article-preview">

@@ -1,8 +1,10 @@
 import * as ko from 'knockout'
 import { Route, Router } from '@profiscience/knockout-contrib-router'
 import {
+  childrenPlugin,
   componentPlugin,
-  initializerPlugin
+  initializerPlugin,
+  redirectPlugin
 } from '@profiscience/knockout-contrib-router-plugins'
 import 'knockout-punches'
 
@@ -22,8 +24,10 @@ Router
 
 Route
   .usePlugin(
+    redirectPlugin,
     componentPlugin,
-    initializerPlugin
+    initializerPlugin,
+    childrenPlugin
   )
 
 Promise.all([

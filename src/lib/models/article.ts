@@ -37,7 +37,16 @@ export class ArticlesModel extends DataModelConstructorBuilder
   .Mixin(APIMixin('articles/feed?'))
   .Mixin(TransformMixin((data) => ({
     ...data,
-    articles: data.articles.map((a: any) => new ArticleModel({ slug: a.slug }, a))
+    articles: data.articles.map((a: any) => {
+      const m = new ArticleModel({ slug: a.slug }, a)
+      // the articles in the list will never need to refresh,
+      // so dispose the update subscription immediately.
+      // this also prevents a bunch of ajax calls on logout
+      m.dispose()
+      return m 
+    })
   })))
   <ArticlesParams | KnockoutObservable<any>> {
+  
+  public articles: KnockoutObservableArray<ArticleModel> = ko.observableArray()
 }
