@@ -6,6 +6,9 @@ import {
 } from '@profiscience/knockout-contrib-router-plugins'
 import 'knockout-punches'
 
+// makes debugging easier
+(window as any).ko = ko;
+
 // punches does not have types. sigh...
 (ko as any).punches.enableAll()
 
