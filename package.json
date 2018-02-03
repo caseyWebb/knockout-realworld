@@ -15,7 +15,8 @@
     "@profiscience/knockout-contrib-router": "^2.0.0-0",
     "@profiscience/knockout-contrib-router-middleware": "^1.0.0-alpha.6",
     "@profiscience/knockout-contrib-router-plugins": "^1.0.0-alpha.6",
-    "knockout": "^3.5.0-beta"
+    "knockout": "^3.5.0-beta",
+    "knockout-punches": "^0.5.1"
   },
   "devDependencies": {
     "@types/knockout": "^3.4.49",
