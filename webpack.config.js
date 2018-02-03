@@ -35,6 +35,9 @@ module.exports = {
     ]
   },
   resolve: {
+    alias: {
+      'lib': path.join(__dirname, 'src/lib/')
+    },
     extensions: ['.ts', '.js']
   },
   plugins: [
