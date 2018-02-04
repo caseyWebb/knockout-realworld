@@ -41,9 +41,9 @@
     core-js "^2.5.3"
     tslib "^1.8.0"
 
-"@profiscience/knockout-contrib-model-mixins-rest@^1.0.0-alpha.11":
-  version "1.0.0-alpha.11"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-rest/-/knockout-contrib-model-mixins-rest-1.0.0-alpha.11.tgz#7feeb2aa1964d83e8fadd583d559dcfc970b9b75"
+"@profiscience/knockout-contrib-model-mixins-rest@^1.0.0-alpha.12":
+  version "1.0.0-alpha.12"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-rest/-/knockout-contrib-model-mixins-rest-1.0.0-alpha.12.tgz#5fae66d3b0a1760d5b9c3866044161d762a9d57c"
   dependencies:
     tslib "^1.8.0"
 
@@ -62,15 +62,15 @@
     tslib "^1.8.0"
 
 "@profiscience/knockout-contrib-model@^1.0.0-alpha.8":
-  version "1.0.0-alpha.20"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model/-/knockout-contrib-model-1.0.0-alpha.20.tgz#8fbd20ddc488115f8e3d81e35adb4b9fa53fea29"
+  version "1.0.0-alpha.21"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model/-/knockout-contrib-model-1.0.0-alpha.21.tgz#8b62e13bd5c27b787266c3d84b6644c261c0f855"
   dependencies:
     "@profiscience/knockout-contrib-model-builders-base" "^1.0.0-alpha.3"
     "@profiscience/knockout-contrib-model-builders-data" "^1.0.0-alpha.10"
     "@profiscience/knockout-contrib-model-builders-view" "^1.0.0-alpha.5"
     "@profiscience/knockout-contrib-model-mixins-cache-memory" "^0.0.6-3"
     "@profiscience/knockout-contrib-model-mixins-pager" "^1.0.0-alpha.10"
-    "@profiscience/knockout-contrib-model-mixins-rest" "^1.0.0-alpha.11"
+    "@profiscience/knockout-contrib-model-mixins-rest" "^1.0.0-alpha.12"
     "@profiscience/knockout-contrib-model-mixins-subscription-disposal" "^1.0.0-alpha.4"
     "@profiscience/knockout-contrib-model-mixins-transform" "^0.0.2-2"
     tslib "^1.8.0"
@@ -94,10 +94,6 @@
     "@profiscience/knockout-contrib-observable-fn-increment" "^1.0.0-alpha.4"
     "@profiscience/knockout-contrib-observable-fn-subscribe-once" "^1.0.0-alpha.4"
     "@profiscience/knockout-contrib-observable-fn-to-string" "^1.0.0-alpha.4"
-
-"@profiscience/knockout-contrib-querystring@^0.0.1-alpha.8":
-  version "0.0.1-alpha.8"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-querystring/-/knockout-contrib-querystring-0.0.1-alpha.8.tgz#1b4e388e749443615a0d12f615501498122aef04"
 
 "@profiscience/knockout-contrib-router-middleware-flash-message@^1.0.0-alpha.6":
   version "1.0.0-alpha.6"

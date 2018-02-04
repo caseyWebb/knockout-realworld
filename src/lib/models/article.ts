@@ -1,5 +1,4 @@
 import { DataModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
-import Query from '@profiscience/knockout-contrib-querystring'
 import { APIMixin, TransformMixin } from 'lib/models.mixins'
 
 const PAGE_SIZE = 20

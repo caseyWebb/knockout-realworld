@@ -1,29 +1,32 @@
 import * as ko from 'knockout'
 import { ViewModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
-import Query from '@profiscience/knockout-contrib-querystring'
 import { ArticlesModel, TagsModel, currentUser } from 'lib/models'
 
 export default class extends ViewModelConstructorBuilder {
   public currentUser = currentUser
   
-  public articlesQuery = new Query({ feed: false, tag: undefined })
-  public articles = new ArticlesModel(this.articlesQuery.asObservable())
+  private query = {
+    feed: ko.observable(currentUser.loggedIn()),
+    tag: ko.observable('')
+  }
+  public articles = new ArticlesModel(this.query)
   public tags = new TagsModel({})
 
-  public isGlobalFeed = ko.pureComputed(() => this.articlesQuery.feed.isDefault() && this.articlesQuery.tag.isDefault())
+  public isGlobalFeed = ko.pureComputed(() => !this.query.feed() && this.query.tag.isDefault())
   public showGlobalFeed() {
-    this.articlesQuery.clear()
+    this.query.feed(false)
+    this.query.tag('')
   }
 
-  public isUserFeed = this.articlesQuery.feed
+  public isUserFeed = this.query.feed
   public showUserFeed() {
     if (!this.currentUser.loggedIn()) return
-    this.articlesQuery.clear()
-    this.articlesQuery.feed(true)
+    this.query.feed(true)
+    this.query.tag('')
   }
 
   public showTag(tag: string) {
-    this.articlesQuery.clear()
-    this.articlesQuery.tag(tag)
+    this.query.feed(false)
+    this.query.tag(tag)
   }
 }
