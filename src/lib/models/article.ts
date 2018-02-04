@@ -1,5 +1,6 @@
 import { DataModelConstructorBuilder, PagerMixin } from '@profiscience/knockout-contrib-model'
 import { APIMixin, TransformMixin } from 'lib/models.mixins'
+import { CommentsModel } from 'lib/models'
 
 const PAGE_SIZE = 10
 
@@ -28,6 +29,9 @@ export class ArticleModel extends DataModelConstructorBuilder
   <ArticleParams> {
   
   public path = `//article/${this.params.slug}`
+
+  // CommentsModel uses the LazyMixin so that it does not 
+  public comments = new CommentsModel({ articleSlug: this.params.slug })
 }
 
 export class ArticlesModel extends DataModelConstructorBuilder

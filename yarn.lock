@@ -57,6 +57,12 @@
   dependencies:
     tslib "^1.8.0"
 
+"@profiscience/knockout-contrib-model-mixins-lazy@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-lazy/-/knockout-contrib-model-mixins-lazy-0.0.1.tgz#e3b87529f7f44442c18b2bbf5cecb3558257ac6b"
+  dependencies:
+    tslib "^1.8.0"
+
 "@profiscience/knockout-contrib-model-mixins-pager@^1.0.0-alpha.14":
   version "1.0.0-alpha.14"
   resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-pager/-/knockout-contrib-model-mixins-pager-1.0.0-alpha.14.tgz#7863499bd045b15afff0178aa30b2c93d71d31a5"
@@ -85,13 +91,14 @@
     tslib "^1.8.0"
 
 "@profiscience/knockout-contrib-model@^1.0.0-alpha.8":
-  version "1.0.0-alpha.25"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model/-/knockout-contrib-model-1.0.0-alpha.25.tgz#66f4ce41eb58a27b5ee70e863d65d59ee5ef5cbe"
+  version "1.0.0-alpha.26"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model/-/knockout-contrib-model-1.0.0-alpha.26.tgz#5f9e527a4894d7e9f54915742ef0be2df06ea238"
   dependencies:
     "@profiscience/knockout-contrib-model-builders-base" "^1.0.0-alpha.3"
     "@profiscience/knockout-contrib-model-builders-data" "^1.0.0-alpha.11"
     "@profiscience/knockout-contrib-model-builders-view" "^1.0.0-alpha.6"
     "@profiscience/knockout-contrib-model-mixins-cache-memory" "^0.0.6-4"
+    "@profiscience/knockout-contrib-model-mixins-lazy" "^0.0.1"
     "@profiscience/knockout-contrib-model-mixins-pager" "^1.0.0-alpha.14"
     "@profiscience/knockout-contrib-model-mixins-rest" "^1.0.0-alpha.13"
     "@profiscience/knockout-contrib-model-mixins-subscription-disposal" "^1.0.0-alpha.5"

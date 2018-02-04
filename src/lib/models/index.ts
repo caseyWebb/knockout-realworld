@@ -7,5 +7,6 @@
   */
 
 export * from './article'
+export * from './comment'
 export * from './tags'
 export * from './user'
