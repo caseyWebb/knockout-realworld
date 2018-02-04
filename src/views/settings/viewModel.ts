@@ -1,3 +1,4 @@
+import { FLASH_MESSAGE } from '@profiscience/knockout-contrib-router-middleware'
 import { ViewModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
 import { Router } from '@profiscience/knockout-contrib-router'
 import { currentUser } from 'lib/models'
@@ -8,6 +9,13 @@ export default class SettingsViewModel extends ViewModelConstructorBuilder {
 
   async save() {
     await currentUser.save({ password: this.password() })
-    Router.update('//')
+    Router.update('//', {
+      with: {
+        [FLASH_MESSAGE]: {
+          text: 'Settings saved!',
+          type: 'success'
+        }
+      }
+    })
   }
 }

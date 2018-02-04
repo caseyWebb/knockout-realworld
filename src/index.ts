@@ -2,6 +2,9 @@ import * as ko from 'knockout'
 import { LazyComponentLoader } from '@profiscience/knockout-contrib-components/loader'
 import { Route, Router } from '@profiscience/knockout-contrib-router'
 import {
+  flashMessageMiddleware
+} from '@profiscience/knockout-contrib-router-middleware'
+import {
   childrenPlugin,
   componentPlugin,
   initializerPlugin,
@@ -23,6 +26,9 @@ Router
     activePathCSSClass: 'active',
     base: PRODUCTION ? '/knockout-realworld' : ''
   })
+  .use(
+    flashMessageMiddleware
+  )
 
 Route
   .usePlugin(
@@ -43,7 +49,10 @@ Promise.all([
   })
 
 async function registerComponents() {
-  const { default: MANIFEST } = await import(/* webpackMode: "eager" */ './components/manifest')
+  const [{ default: MANIFEST }] = await Promise.all([
+    import(/* webpackMode: "eager" */ './components/manifest'),
+    import(/* webpackMode: "eager" */ '@profiscience/knockout-contrib-components/lazy')
+  ])
   ko.components.loaders.unshift(new LazyComponentLoader(MANIFEST))
 }
 
