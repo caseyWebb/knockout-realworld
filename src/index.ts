@@ -1,4 +1,5 @@
 import * as ko from 'knockout'
+import { LazyComponentLoader } from '@profiscience/knockout-contrib-components/loader'
 import { Route, Router } from '@profiscience/knockout-contrib-router'
 import {
   childrenPlugin,
@@ -36,27 +37,14 @@ Promise.all([
   registerRoutes()
 ])
   .then(() => {
-    ko.applyBindings()
+    const showOverlay = ko.observable(true)
+    ko.applyBindings({ showOverlay })
+    Router.isNavigating.subscribe(showOverlay)
   })
 
 async function registerComponents() {
   const { default: MANIFEST } = await import(/* webpackMode: "eager" */ './components/manifest')
-  Object.keys(MANIFEST).forEach((n) => ko.components.register(n, {}))
-  ko.components.loaders.unshift({
-    getConfig(name, cb) {
-      if (MANIFEST[name]) {
-        MANIFEST[name]()
-          .then((config) => cb(config))
-          .catch((err) => {
-            const msg = `Error loading component ${name}`
-            console.error(msg, err)
-            cb({ template: msg })
-          })
-      } else {
-        cb(null)
-      }
-    }
-  })
+  ko.components.loaders.unshift(new LazyComponentLoader(MANIFEST))
 }
 
 /**

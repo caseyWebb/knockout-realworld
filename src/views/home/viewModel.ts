@@ -12,7 +12,7 @@ export default class extends ViewModelConstructorBuilder {
   public articles = new ArticlesModel(this.query)
   public tags = new TagsModel({})
 
-  public isGlobalFeed = ko.pureComputed(() => !this.query.feed() && this.query.tag.isDefault())
+  public isGlobalFeed = ko.pureComputed(() => !this.query.feed() && !this.query.tag())
   public showGlobalFeed() {
     this.query.feed(false)
     this.query.tag('')

@@ -8,8 +8,75 @@
     <link href="//fonts.googleapis.com/css?family=Titillium+Web:700|Source+Serif+Pro:400,700|Merriweather+Sans:400,700|Source+Sans+Pro:400,300,600,700,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <!-- Import the custom Bootstrap 4 theme from our hosted CDN -->
     <link rel="stylesheet" href="//demo.productionready.io/main.css">
+
+    <!-- 
+      The MIT License (MIT)
+
+      Copyright (c) 2014 Luke Haas
+
+      Permission is hereby granted, free of charge, to any person obtaining a copy of
+      this software and associated documentation files (the "Software"), to deal in
+      the Software without restriction, including without limitation the rights to
+      use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+      the Software, and to permit persons to whom the Software is furnished to do so,
+      subject to the following conditions:
+
+      The above copyright notice and this permission notice shall be included in all
+      copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+      FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+      COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+      IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+      CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+      https://github.com/lukehaas/css-loaders
+    -->
+    <style>
+      .overlay-wrapper {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .overlay-loader,
+      .overlay-loader:after {
+        border-radius: 50%;
+        width: 10em;
+        height: 10em;
+      }
+      .overlay-loader {
+        margin: 60px auto;
+        font-size: 10px;
+        position: relative;
+        text-indent: -9999em;
+        border-top: 1.1em solid rgba(121, 206, 121, .9);
+        border-right: 1.1em solid rgba(121, 206, 121, .95);
+        border-bottom: 1.1em solid rgba(121, 206, 121, 1);
+        border-left: 1.1em solid #ffffff;
+        transform: translateZ(0);
+        animation: overlay-loader 1.1s infinite linear;
+      }
+      @keyframes overlay-loader {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
   </head>
   <body>
+    <!-- Embed w/ styles above to show on page load, use comment syntax so {{}} don't show before applyBindings -->
+    <!-- ko if: showOverlay -->
+    <div class="overlay-wrapper">
+      <div class="overlay-loader"></div>
+    </div>
+    <!-- /ko -->
     <app-header></app-header>
     <router></router>
     <app-footer></app-footer>
