@@ -59,7 +59,10 @@
 
           <div class="tag-list">
             {{#foreach tags.tags}}
-              <a href="#" data-bind="click: $component.showTag.bind($component, $data)" class="tag-pill tag-default">{{$data}}</a>
+              <a href="#" class="tag-pill tag-default" data-bind="
+                click: $component.showTag.bind($component, $data),
+                css: { 'tag-outline': $data === $component.query.tag() }
+              ">{{$data}}</a>
             {{/foreach}}
           </div>
         </div>
