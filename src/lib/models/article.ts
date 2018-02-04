@@ -1,7 +1,7 @@
-import { DataModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
+import { DataModelConstructorBuilder, PagerMixin } from '@profiscience/knockout-contrib-model'
 import { APIMixin, TransformMixin } from 'lib/models.mixins'
 
-const PAGE_SIZE = 20
+const PAGE_SIZE = 10
 
 export type ArticleParams = {
   /**
@@ -19,8 +19,6 @@ export type ArticlesParams = {
   /**
    * Querystring param(s)
    */
-  // limit: number
-  // offset: number
   tag?: KnockoutObservable<string | void> | KnockoutComputed<string | void>
   favorited?: string
 }
@@ -34,7 +32,15 @@ export class ArticleModel extends DataModelConstructorBuilder
 
 export class ArticlesModel extends DataModelConstructorBuilder
   .Mixin(APIMixin('articles/feed?'))
-  .Mixin(TransformMixin((data) => ({
+  .Mixin(TransformMixin(mapArticles))
+  .Mixin(PagerMixin('articles', limitOffsetPaginationStrategy))
+  <ArticlesParams | KnockoutObservable<any>> {
+  
+  public articles: KnockoutObservableArray<ArticleModel> = ko.observableArray()
+}
+
+function mapArticles(data: any) {
+  return {
     ...data,
     articles: data.articles.map((a: any) => {
       const m = new ArticleModel({ slug: a.slug }, a)
@@ -42,10 +48,14 @@ export class ArticlesModel extends DataModelConstructorBuilder
       // so dispose the update subscription immediately.
       // this also prevents a bunch of ajax calls on logout
       m.dispose()
-      return m 
+      return m
     })
-  })))
-  <ArticlesParams | KnockoutObservable<any>> {
-  
-  public articles: KnockoutObservableArray<ArticleModel> = ko.observableArray()
+  }
+}
+
+function limitOffsetPaginationStrategy(page: number) {
+  return {
+    limit: PAGE_SIZE,
+    offset: PAGE_SIZE * (page - 1)
+  }
 }
