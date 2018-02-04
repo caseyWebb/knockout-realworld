@@ -2,28 +2,28 @@
 # yarn lockfile v1
 
 
-"@profiscience/knockout-contrib-components-flash-message@^1.0.0-alpha.24":
-  version "1.0.0-alpha.24"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-components-flash-message/-/knockout-contrib-components-flash-message-1.0.0-alpha.24.tgz#166f49e31cd81c822770b5605f576bbb9afe3df7"
+"@profiscience/knockout-contrib-components-flash-message@^1.0.0-alpha.25":
+  version "1.0.0-alpha.25"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-components-flash-message/-/knockout-contrib-components-flash-message-1.0.0-alpha.25.tgz#409845d8d23b3b61d53a9a28e557549454f2a672"
   dependencies:
-    "@profiscience/knockout-contrib-model-builders-view" "^1.0.0-alpha.6"
+    "@profiscience/knockout-contrib-model-builders-view" "^1.0.0-alpha.7"
     jsx-dom "^5.2.0"
 
-"@profiscience/knockout-contrib-components-markdown@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-components-markdown/-/knockout-contrib-components-markdown-0.0.1.tgz#79cb2764d88ad30396d3fc729220d0d4576a0574"
+"@profiscience/knockout-contrib-components-markdown@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-components-markdown/-/knockout-contrib-components-markdown-0.0.2.tgz#67e184cba93d81d096e64d299f12a11709f72d82"
   dependencies:
-    "@profiscience/knockout-contrib-model-builders-view" "^1.0.0-alpha.6"
+    "@profiscience/knockout-contrib-model-builders-view" "^1.0.0-alpha.7"
     "@types/marked" "^0.3.0"
     jsx-dom "^5.2.0"
     marked "^0.3.12"
 
 "@profiscience/knockout-contrib-components@^1.0.0-alpha.22":
-  version "1.0.0-alpha.27"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-components/-/knockout-contrib-components-1.0.0-alpha.27.tgz#449cacf155530541dcbc8dc5100a32e5822a7e36"
+  version "1.0.0-alpha.28"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-components/-/knockout-contrib-components-1.0.0-alpha.28.tgz#937089fa9260d34279d429e1586fe2d7ba9081bc"
   dependencies:
-    "@profiscience/knockout-contrib-components-flash-message" "^1.0.0-alpha.24"
-    "@profiscience/knockout-contrib-components-markdown" "^0.0.1"
+    "@profiscience/knockout-contrib-components-flash-message" "^1.0.0-alpha.25"
+    "@profiscience/knockout-contrib-components-markdown" "^0.0.2"
     postcss-loader "^2.0.10"
     postcss-modules "^1.1.0"
     style-loader "^0.20.0"
@@ -43,9 +43,9 @@
     "@profiscience/knockout-contrib-utils" "^1.0.0-alpha.11"
     tslib "^1.8.0"
 
-"@profiscience/knockout-contrib-model-builders-view@^1.0.0-alpha.6":
-  version "1.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-builders-view/-/knockout-contrib-model-builders-view-1.0.0-alpha.6.tgz#517012fbe10b22b2083d8407a8bb13df6839123e"
+"@profiscience/knockout-contrib-model-builders-view@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-builders-view/-/knockout-contrib-model-builders-view-1.0.0-alpha.7.tgz#45233cc397d8754834877df089a0fa8b9ff7ebe8"
   dependencies:
     "@profiscience/knockout-contrib-model-builders-base" "^1.0.0-alpha.3"
     "@profiscience/knockout-contrib-model-mixins-subscription-disposal" "^1.0.0-alpha.5"
@@ -57,9 +57,9 @@
   dependencies:
     tslib "^1.8.0"
 
-"@profiscience/knockout-contrib-model-mixins-lazy@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-lazy/-/knockout-contrib-model-mixins-lazy-0.0.1.tgz#e3b87529f7f44442c18b2bbf5cecb3558257ac6b"
+"@profiscience/knockout-contrib-model-mixins-lazy@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-lazy/-/knockout-contrib-model-mixins-lazy-0.0.2.tgz#a3fdbad100541d26dda85f31dce8c579642b1caa"
   dependencies:
     tslib "^1.8.0"
 
@@ -83,26 +83,26 @@
     "@profiscience/knockout-contrib-model-builders-base" "^1.0.0-alpha.3"
     tslib "^1.8.0"
 
-"@profiscience/knockout-contrib-model-mixins-transform@^0.0.2-3":
-  version "0.0.2-3"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-transform/-/knockout-contrib-model-mixins-transform-0.0.2-3.tgz#37891e2b858eb7730ef4b923d62e8a41ac2baccc"
+"@profiscience/knockout-contrib-model-mixins-transform@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-transform/-/knockout-contrib-model-mixins-transform-0.0.2.tgz#a64f681033ee3c1a2682d39c2b3e66482bfd9b9a"
   dependencies:
     core-js "^2.5.3"
     tslib "^1.8.0"
 
 "@profiscience/knockout-contrib-model@^1.0.0-alpha.8":
-  version "1.0.0-alpha.26"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model/-/knockout-contrib-model-1.0.0-alpha.26.tgz#5f9e527a4894d7e9f54915742ef0be2df06ea238"
+  version "1.0.0-alpha.28"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model/-/knockout-contrib-model-1.0.0-alpha.28.tgz#049be94801434f0781c615ca9ecb83029b4cb4e0"
   dependencies:
     "@profiscience/knockout-contrib-model-builders-base" "^1.0.0-alpha.3"
     "@profiscience/knockout-contrib-model-builders-data" "^1.0.0-alpha.11"
-    "@profiscience/knockout-contrib-model-builders-view" "^1.0.0-alpha.6"
+    "@profiscience/knockout-contrib-model-builders-view" "^1.0.0-alpha.7"
     "@profiscience/knockout-contrib-model-mixins-cache-memory" "^0.0.6-4"
-    "@profiscience/knockout-contrib-model-mixins-lazy" "^0.0.1"
+    "@profiscience/knockout-contrib-model-mixins-lazy" "^0.0.2"
     "@profiscience/knockout-contrib-model-mixins-pager" "^1.0.0-alpha.14"
     "@profiscience/knockout-contrib-model-mixins-rest" "^1.0.0-alpha.13"
     "@profiscience/knockout-contrib-model-mixins-subscription-disposal" "^1.0.0-alpha.5"
-    "@profiscience/knockout-contrib-model-mixins-transform" "^0.0.2-3"
+    "@profiscience/knockout-contrib-model-mixins-transform" "^0.0.2"
     tslib "^1.8.0"
 
 "@profiscience/knockout-contrib-router-middleware-flash-message@^1.0.0-alpha.6":

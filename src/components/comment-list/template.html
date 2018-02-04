@@ -10,10 +10,12 @@
       &nbsp;
       <a href="" class="comment-author">{{author.username}}</a>
       <span class="date-posted">{{createdAt}}</span>
-      <!-- <span class="mod-options">
-        <i class="ion-edit"></i>
-        <i class="ion-trash-a"></i>
-      </span> -->
+      {{#if isOwn}}
+        <span class="mod-options">
+          <i class="ion-edit"></i>
+          <i class="ion-trash-a" data-bind="click: $data.delete"></i>
+        </span>
+      {{/if}}
     </div>
   </div>
 {{/foreach}}

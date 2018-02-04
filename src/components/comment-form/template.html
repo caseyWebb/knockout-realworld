@@ -1,9 +1,14 @@
-<form class="card comment-form">
+<form class="card comment-form" data-bind="event.submit: post">
   <div class="card-block">
-    <textarea class="form-control" placeholder="Write a comment..." rows="3"></textarea>
+    <textarea 
+      class="form-control"
+      placeholder="Write a comment..."
+      rows="3"
+      data-bind="value: body">
+    </textarea>
   </div>
   <div class="card-footer">
-    <img src="http://i.imgur.com/Qr71crq.jpg" class="comment-author-img" />
+    <img src="{{currentUser.image}}" class="comment-author-img" />
     <button class="btn btn-sm btn-primary">
       Post Comment
     </button>
