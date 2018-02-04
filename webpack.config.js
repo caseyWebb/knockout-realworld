@@ -33,7 +33,11 @@ const config = {
       {
         test: /\.html$/,
         exclude: /node_modules/,
-        loader: 'html-loader'
+        loader: 'html-loader',
+        options: {
+          minimize: PRODUCTION,
+          ignoreCustomComments: [ /^\s*\/?ko/ ]
+        }
       }
     ]
   },
