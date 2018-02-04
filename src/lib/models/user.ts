@@ -10,7 +10,7 @@ type Credentials = {
 const CURRENT_USER = 'CURRENT_USER'
 
 export class UserModel extends DataModelConstructorBuilder
-  .Mixin(APIMixin('users'))
+  .Mixin(APIMixin('')) // user/users inconsistency
   <{}> {
   
   public loggedIn = ko.observable(false)
@@ -32,9 +32,20 @@ export class UserModel extends DataModelConstructorBuilder
         }
   }
 
+  public async save({ password }: { password?: string } = {}) {
+    const { user: updatedUser } = await this.api.put('user', {
+      data: {
+        ...this.toJS(),
+        password
+      }
+    })
+    localStorage.setItem(CURRENT_USER, JSON.stringify(updatedUser))
+    await currentUser.update()
+  }
+
   public static async register(user: Credentials & { username: string }) {
     const u = new UserModel({})
-    const res = await u.api.post({ data: { user } })
+    const res = await u.api.post('users', { data: { user } })
     localStorage.setItem(CURRENT_USER, JSON.stringify(res.user))
     u.dispose()
     await currentUser.update()
@@ -42,7 +53,7 @@ export class UserModel extends DataModelConstructorBuilder
 
   public static async login(credentials: Credentials) {
     const u = new UserModel({})
-    const { user } = await u.api.post('login', { data: { user: credentials } })
+    const { user } = await u.api.post('users/login', { data: { user: credentials } })
     localStorage.setItem(CURRENT_USER, JSON.stringify(user))
     u.dispose()
     await currentUser.update()
