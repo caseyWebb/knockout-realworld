@@ -13,7 +13,7 @@ const config = {
   context: __dirname,
   entry: path.join(__dirname, 'src/index.ts'),
   output: {
-    filename: 'entry.js',
+    filename: 'entry.[hash].js',
     chunkFilename: 'chunk.[id].[chunkhash].js',
     path: path.join(__dirname, 'dist'),
     publicPath: PRODUCTION
@@ -66,7 +66,7 @@ const config = {
       template: 'src/index.html'
     }),
     new ScriptExtPlugin({
-      async: ['entry.js'],
+      async: ['entry.*.js'],
       prefetch: {
         test: /\.js$/,
         chunks: 'async'
