@@ -8,9 +8,9 @@
   dependencies:
     tslib "^1.8.0"
 
-"@profiscience/knockout-contrib-model-builders-data@^1.0.0-alpha.9":
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-builders-data/-/knockout-contrib-model-builders-data-1.0.0-alpha.9.tgz#e012dfc55507111294baa6bdca2aabfcdb713672"
+"@profiscience/knockout-contrib-model-builders-data@^1.0.0-alpha.10":
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-builders-data/-/knockout-contrib-model-builders-data-1.0.0-alpha.10.tgz#854b1499703835c781f2b4cb73b9c8c357c5e943"
   dependencies:
     "@profiscience/knockout-contrib-model-builders-base" "^1.0.0-alpha.3"
     "@profiscience/knockout-contrib-model-mixins-subscription-disposal" "^1.0.0-alpha.4"
@@ -25,25 +25,25 @@
     "@profiscience/knockout-contrib-model-mixins-subscription-disposal" "^1.0.0-alpha.4"
     tslib "^1.8.0"
 
-"@profiscience/knockout-contrib-model-mixins-cache-memory@^0.0.6-2":
-  version "0.0.6-2"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-cache-memory/-/knockout-contrib-model-mixins-cache-memory-0.0.6-2.tgz#52e3acf69cd53d92d999961f332a40e81170efa7"
+"@profiscience/knockout-contrib-model-mixins-cache-memory@^0.0.6-3":
+  version "0.0.6-3"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-cache-memory/-/knockout-contrib-model-mixins-cache-memory-0.0.6-3.tgz#f0ad080d9a97796ba279e428beeede7348285229"
   dependencies:
     tslib "^1.8.0"
 
-"@profiscience/knockout-contrib-model-mixins-pager@^1.0.0-alpha.9":
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-pager/-/knockout-contrib-model-mixins-pager-1.0.0-alpha.9.tgz#977e7930dd4ee227f786947badb0ef8c55cff3eb"
+"@profiscience/knockout-contrib-model-mixins-pager@^1.0.0-alpha.10":
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-pager/-/knockout-contrib-model-mixins-pager-1.0.0-alpha.10.tgz#35f38518a0ced6df917b2913800e0d611512d9ff"
   dependencies:
-    "@profiscience/knockout-contrib-model-builders-data" "^1.0.0-alpha.9"
+    "@profiscience/knockout-contrib-model-builders-data" "^1.0.0-alpha.10"
     "@profiscience/knockout-contrib-observable-fn" "^1.0.0-alpha.10"
     "@profiscience/knockout-contrib-utils" "^1.0.0-alpha.11"
     core-js "^2.5.3"
     tslib "^1.8.0"
 
-"@profiscience/knockout-contrib-model-mixins-rest@^1.0.0-alpha.9":
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-rest/-/knockout-contrib-model-mixins-rest-1.0.0-alpha.9.tgz#ffac0e1064d37b1d079376416bb09c2f3da400d9"
+"@profiscience/knockout-contrib-model-mixins-rest@^1.0.0-alpha.11":
+  version "1.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-rest/-/knockout-contrib-model-mixins-rest-1.0.0-alpha.11.tgz#7feeb2aa1964d83e8fadd583d559dcfc970b9b75"
   dependencies:
     tslib "^1.8.0"
 
@@ -54,25 +54,25 @@
     "@profiscience/knockout-contrib-model-builders-base" "^1.0.0-alpha.3"
     tslib "^1.8.0"
 
-"@profiscience/knockout-contrib-model-mixins-transform@^0.0.2-1":
-  version "0.0.2-1"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-transform/-/knockout-contrib-model-mixins-transform-0.0.2-1.tgz#a3e689fd5ad38d5d9d3b2280af088d100eee45e5"
+"@profiscience/knockout-contrib-model-mixins-transform@^0.0.2-2":
+  version "0.0.2-2"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-transform/-/knockout-contrib-model-mixins-transform-0.0.2-2.tgz#9a7622bb396afb94dc958c05de1b73cbd059f0cf"
   dependencies:
     core-js "^2.5.3"
     tslib "^1.8.0"
 
 "@profiscience/knockout-contrib-model@^1.0.0-alpha.8":
-  version "1.0.0-alpha.18"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model/-/knockout-contrib-model-1.0.0-alpha.18.tgz#8b7bbad02a7fa3145834785ff743e9d94417818e"
+  version "1.0.0-alpha.20"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model/-/knockout-contrib-model-1.0.0-alpha.20.tgz#8fbd20ddc488115f8e3d81e35adb4b9fa53fea29"
   dependencies:
     "@profiscience/knockout-contrib-model-builders-base" "^1.0.0-alpha.3"
-    "@profiscience/knockout-contrib-model-builders-data" "^1.0.0-alpha.9"
+    "@profiscience/knockout-contrib-model-builders-data" "^1.0.0-alpha.10"
     "@profiscience/knockout-contrib-model-builders-view" "^1.0.0-alpha.5"
-    "@profiscience/knockout-contrib-model-mixins-cache-memory" "^0.0.6-2"
-    "@profiscience/knockout-contrib-model-mixins-pager" "^1.0.0-alpha.9"
-    "@profiscience/knockout-contrib-model-mixins-rest" "^1.0.0-alpha.9"
+    "@profiscience/knockout-contrib-model-mixins-cache-memory" "^0.0.6-3"
+    "@profiscience/knockout-contrib-model-mixins-pager" "^1.0.0-alpha.10"
+    "@profiscience/knockout-contrib-model-mixins-rest" "^1.0.0-alpha.11"
     "@profiscience/knockout-contrib-model-mixins-subscription-disposal" "^1.0.0-alpha.4"
-    "@profiscience/knockout-contrib-model-mixins-transform" "^0.0.2-1"
+    "@profiscience/knockout-contrib-model-mixins-transform" "^0.0.2-2"
     tslib "^1.8.0"
 
 "@profiscience/knockout-contrib-observable-fn-increment@^1.0.0-alpha.4":
@@ -129,17 +129,17 @@
   version "1.0.0-alpha.5"
   resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-router-plugins-children/-/knockout-contrib-router-plugins-children-1.0.0-alpha.5.tgz#1ab741870cae2d027a105bd7c46e6d7c5dfc8ceb"
 
-"@profiscience/knockout-contrib-router-plugins-component@^1.0.0-alpha.7":
-  version "1.0.0-alpha.7"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-router-plugins-component/-/knockout-contrib-router-plugins-component-1.0.0-alpha.7.tgz#2ad65d472a6b87998ab3fea9486ca29c6070168a"
+"@profiscience/knockout-contrib-router-plugins-component@^1.0.0-alpha.8":
+  version "1.0.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-router-plugins-component/-/knockout-contrib-router-plugins-component-1.0.0-alpha.8.tgz#e51cee278dce0b21e61584c806394d479e922287"
 
 "@profiscience/knockout-contrib-router-plugins-components@^1.0.0-alpha.5":
   version "1.0.0-alpha.5"
   resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-router-plugins-components/-/knockout-contrib-router-plugins-components-1.0.0-alpha.5.tgz#a4c5986263d4a56b89736a4fd25dd709ceb19492"
 
-"@profiscience/knockout-contrib-router-plugins-init@^1.0.0-alpha.6":
-  version "1.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-router-plugins-init/-/knockout-contrib-router-plugins-init-1.0.0-alpha.6.tgz#4ed218ec8f41e14ff5dd58b29848ddffd9a5e9a1"
+"@profiscience/knockout-contrib-router-plugins-init@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-router-plugins-init/-/knockout-contrib-router-plugins-init-1.0.0-alpha.7.tgz#bf1d6737ec90158982e3708e99a0976b5aa8bdef"
   dependencies:
     tslib "^1.8.0"
 
@@ -156,14 +156,14 @@
   resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-router-plugins-with/-/knockout-contrib-router-plugins-with-1.0.0-alpha.5.tgz#9f902159687cc32155968e39d7df9951cd27ddf1"
 
 "@profiscience/knockout-contrib-router-plugins@^1.0.0-alpha.6":
-  version "1.0.0-alpha.11"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-router-plugins/-/knockout-contrib-router-plugins-1.0.0-alpha.11.tgz#a0667c6b3dc510f61c17791f98218cbbe3d46854"
+  version "1.0.0-alpha.12"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-router-plugins/-/knockout-contrib-router-plugins-1.0.0-alpha.12.tgz#484ef87b16a1eb1b2d111306d80691c3cb0f7e39"
   dependencies:
     "@profiscience/knockout-contrib-router-plugins-authorization" "^1.0.0-alpha.8"
     "@profiscience/knockout-contrib-router-plugins-children" "^1.0.0-alpha.5"
-    "@profiscience/knockout-contrib-router-plugins-component" "^1.0.0-alpha.7"
+    "@profiscience/knockout-contrib-router-plugins-component" "^1.0.0-alpha.8"
     "@profiscience/knockout-contrib-router-plugins-components" "^1.0.0-alpha.5"
-    "@profiscience/knockout-contrib-router-plugins-init" "^1.0.0-alpha.6"
+    "@profiscience/knockout-contrib-router-plugins-init" "^1.0.0-alpha.7"
     "@profiscience/knockout-contrib-router-plugins-redirect" "^0.0.1"
     "@profiscience/knockout-contrib-router-plugins-title" "^1.0.0-alpha.5"
     "@profiscience/knockout-contrib-router-plugins-with" "^1.0.0-alpha.5"
@@ -2810,14 +2810,6 @@ html-minifier@^3.2.3, html-minifier@^3.5.8:
     param-case "2.1.x"
     relateurl "0.2.x"
     uglify-js "3.3.x"
-
-html-webpack-inline-source-plugin@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/html-webpack-inline-source-plugin/-/html-webpack-inline-source-plugin-0.0.9.tgz#e52dd3cf1164ac76ceaf39ba206f92e3597d054d"
-  dependencies:
-    escape-string-regexp "^1.0.5"
-    slash "^1.0.0"
-    source-map-url "^0.4.0"
 
 html-webpack-plugin@^2.30.1:
   version "2.30.1"

@@ -16,7 +16,7 @@ export class UserModel extends DataModelConstructorBuilder
   public loggedIn = ko.observable(false)
   public username!: KnockoutObservable<string>
   public email!: KnockoutObservable<string>
-  public token!: string
+  public token!: KnockoutObservable<string>
   public bio!: string
   public image?: string
 

@@ -1,4 +1,5 @@
 import { createRESTMixin } from '@profiscience/knockout-contrib-model'
+import { currentUser } from 'lib/models'
 
 export {
   TransformMixin
@@ -7,5 +8,7 @@ export {
 export const APIMixin = createRESTMixin({
   baseURL: 'https://conduit.productionready.io/api',
   cors: true,
-  authenticated: true
+  headers: {
+    Authorization: ko.pureComputed(() => `Token ${currentUser.token()}`)
+  }
 })
