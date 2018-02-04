@@ -2,18 +2,18 @@
 # yarn lockfile v1
 
 
-"@profiscience/knockout-contrib-components-flash-message@^1.0.0-alpha.22":
-  version "1.0.0-alpha.22"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-components-flash-message/-/knockout-contrib-components-flash-message-1.0.0-alpha.22.tgz#d6bb36e4e46a90064e46f5b287cc04b87e9a5e85"
+"@profiscience/knockout-contrib-components-flash-message@^1.0.0-alpha.23":
+  version "1.0.0-alpha.23"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-components-flash-message/-/knockout-contrib-components-flash-message-1.0.0-alpha.23.tgz#1dcd247eb922541683f4a5b89285bb8d0c4012f4"
   dependencies:
-    "@profiscience/knockout-contrib-model" "^1.0.0-alpha.23"
+    "@profiscience/knockout-contrib-model" "^1.0.0-alpha.24"
     jsx-dom "^5.2.0"
 
 "@profiscience/knockout-contrib-components@^1.0.0-alpha.22":
-  version "1.0.0-alpha.24"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-components/-/knockout-contrib-components-1.0.0-alpha.24.tgz#7fe8bcfb0fceb992be7b79f3ec2bc0e5f7feb0a3"
+  version "1.0.0-alpha.25"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-components/-/knockout-contrib-components-1.0.0-alpha.25.tgz#62bf8399f26888a2225f6bae20de48c34a432524"
   dependencies:
-    "@profiscience/knockout-contrib-components-flash-message" "^1.0.0-alpha.22"
+    "@profiscience/knockout-contrib-components-flash-message" "^1.0.0-alpha.23"
     postcss-loader "^2.0.10"
     postcss-modules "^1.1.0"
     style-loader "^0.20.0"
@@ -47,9 +47,9 @@
   dependencies:
     tslib "^1.8.0"
 
-"@profiscience/knockout-contrib-model-mixins-pager@^1.0.0-alpha.12":
-  version "1.0.0-alpha.12"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-pager/-/knockout-contrib-model-mixins-pager-1.0.0-alpha.12.tgz#457df2e44ece8ea844e09ba016616eb37c6c84e0"
+"@profiscience/knockout-contrib-model-mixins-pager@^1.0.0-alpha.13":
+  version "1.0.0-alpha.13"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model-mixins-pager/-/knockout-contrib-model-mixins-pager-1.0.0-alpha.13.tgz#bc7b4678fb4c72b9b0f8c5162e3319b9e2248f6b"
   dependencies:
     "@profiscience/knockout-contrib-model-builders-data" "^1.0.0-alpha.11"
     "@profiscience/knockout-contrib-observable-fn" "^1.0.0-alpha.10"
@@ -77,15 +77,15 @@
     core-js "^2.5.3"
     tslib "^1.8.0"
 
-"@profiscience/knockout-contrib-model@^1.0.0-alpha.23", "@profiscience/knockout-contrib-model@^1.0.0-alpha.8":
-  version "1.0.0-alpha.23"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model/-/knockout-contrib-model-1.0.0-alpha.23.tgz#ea44a685fa1d18385d8861d8c7e91249cce55547"
+"@profiscience/knockout-contrib-model@^1.0.0-alpha.24", "@profiscience/knockout-contrib-model@^1.0.0-alpha.8":
+  version "1.0.0-alpha.24"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-model/-/knockout-contrib-model-1.0.0-alpha.24.tgz#1036767308b1ae39e57a06cea098facb94f0ecea"
   dependencies:
     "@profiscience/knockout-contrib-model-builders-base" "^1.0.0-alpha.3"
     "@profiscience/knockout-contrib-model-builders-data" "^1.0.0-alpha.11"
     "@profiscience/knockout-contrib-model-builders-view" "^1.0.0-alpha.6"
     "@profiscience/knockout-contrib-model-mixins-cache-memory" "^0.0.6-4"
-    "@profiscience/knockout-contrib-model-mixins-pager" "^1.0.0-alpha.12"
+    "@profiscience/knockout-contrib-model-mixins-pager" "^1.0.0-alpha.13"
     "@profiscience/knockout-contrib-model-mixins-rest" "^1.0.0-alpha.13"
     "@profiscience/knockout-contrib-model-mixins-subscription-disposal" "^1.0.0-alpha.5"
     "@profiscience/knockout-contrib-model-mixins-transform" "^0.0.2-3"
