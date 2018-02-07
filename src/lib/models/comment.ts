@@ -34,6 +34,10 @@ export class CommentsModel extends DataModelConstructorBuilder
       })
     }
   }))
+  // will not initialize until instance.comments is accessed.
+  // this allows adding as property of ArticleModel while still
+  // casting articles in the ArticlesModel, without fetching comments
+  // for every listed article
   .Mixin(LazyMixin('comments'))
   <CommentsParams> {
   

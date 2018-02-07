@@ -29,8 +29,8 @@
     style-loader "^0.20.0"
 
 "@profiscience/knockout-contrib-framework@^1.0.0-alpha.5":
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-framework/-/knockout-contrib-framework-1.0.0-alpha.9.tgz#1ed2f97123e78f7df91bf8002de4727187a5cf1e"
+  version "1.0.0-alpha.12"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-framework/-/knockout-contrib-framework-1.0.0-alpha.12.tgz#be31bf50758ce6ac5499c3881119fb9909aa7e8b"
   dependencies:
     "@profiscience/knockout-contrib-components" "^1.0.0-alpha.32"
     "@profiscience/knockout-contrib-router" "^2.0.0-4"
@@ -3558,7 +3558,7 @@ loader-runner@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.3.0.tgz#f482aea82d543e07921700d5a46ef26fdac6b8a2"
 
-loader-utils@1.1.0, loader-utils@^1.0.0, loader-utils@^1.0.2, loader-utils@^1.1.0:
+loader-utils@1.1.0, loader-utils@^1.0.2, loader-utils@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.1.0.tgz#c98aef488bcceda2ffb5e2de646d6a754429f5cd"
   dependencies:
@@ -5722,12 +5722,6 @@ uuid@^3.0.0, uuid@^3.0.1:
 v8-compile-cache@^1.1.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-1.1.2.tgz#8d32e4f16974654657e676e0e467a348e89b0dc4"
-
-val-loader@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/val-loader/-/val-loader-1.1.0.tgz#ed91537424d62a4ded98e846ccf07367756bf506"
-  dependencies:
-    loader-utils "^1.0.0"
 
 validate-npm-package-license@^3.0.1:
   version "3.0.1"
