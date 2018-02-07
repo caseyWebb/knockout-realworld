@@ -1,5 +1,6 @@
+import * as ko from 'knockout'
 import { createRESTMixin } from '@profiscience/knockout-contrib-model'
-import { currentUser } from 'lib/models'
+import { currentUser } from 'lib/models/user'
 
 export {
   LazyMixin,

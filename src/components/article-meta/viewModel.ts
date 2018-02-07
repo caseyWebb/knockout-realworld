@@ -1,5 +1,5 @@
 import { ViewModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
-import { ArticleModel } from 'lib/models'
+import { ArticleModel } from 'lib/models/article'
 
 export default class ArticleMetaComponent extends ViewModelConstructorBuilder {
   public article: ArticleModel

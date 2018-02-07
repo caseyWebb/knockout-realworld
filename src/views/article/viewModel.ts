@@ -1,7 +1,8 @@
 // import * as ko from 'knockout'
 import { ViewModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
 import { Context } from '@profiscience/knockout-contrib-router'
-import { ArticleModel, ArticleParams, currentUser } from 'lib/models'
+import { ArticleModel, ArticleParams } from 'lib/models/article'
+import { currentUser } from 'lib/models/user'
 
 export default class extends ViewModelConstructorBuilder {
   public currentUser = currentUser

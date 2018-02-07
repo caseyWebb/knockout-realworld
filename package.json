@@ -11,11 +11,9 @@
     "deploy": "./scripts/deploy.sh"
   },
   "dependencies": {
-    "@profiscience/knockout-contrib-components": "^1.0.0-alpha.22",
+    "@profiscience/knockout-contrib-framework": "^1.0.0-alpha.5",
     "@profiscience/knockout-contrib-model": "^1.0.0-alpha.8",
     "@profiscience/knockout-contrib-router": "^2.0.0-0",
-    "@profiscience/knockout-contrib-router-middleware": "^1.0.0-alpha.9",
-    "@profiscience/knockout-contrib-router-plugins": "^1.0.0-alpha.6",
     "knockout": "^3.5.0-beta",
     "knockout-punches": "^0.5.1"
   },

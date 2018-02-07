@@ -1,6 +1,6 @@
 import { DataModelConstructorBuilder, PagerMixin } from '@profiscience/knockout-contrib-model'
 import { APIMixin, TransformMixin } from 'lib/models.mixins'
-import { CommentsModel } from 'lib/models'
+import { CommentsModel } from 'lib/models/comment'
 
 const PAGE_SIZE = 10
 

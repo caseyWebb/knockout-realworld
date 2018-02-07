@@ -3,10 +3,11 @@
     "module": "esnext",
     "target": "esnext",
     "sourceMap": true,
-    "noEmit": true,
     "importHelpers": true,
     "strict": true,
     "moduleResolution": "node",
+    "rootDir": "./src",
+    "outDir": "./build",
     "baseUrl": ".",
     "lib": [
       "dom",

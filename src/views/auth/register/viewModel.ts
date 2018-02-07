@@ -3,8 +3,8 @@ import { ViewModelConstructorBuilder } from '@profiscience/knockout-contrib-mode
 import { Router, Context } from '@profiscience/knockout-contrib-router'
 import { IContext } from '@profiscience/knockout-contrib-router'
 import { IRoutedComponentInstance } from '@profiscience/knockout-contrib-router-plugins'
+import { UserModel } from 'lib/models/user'
 import AuthViewModel from '../viewModel'
-import { UserModel } from 'lib/models'
 
 export default class RegisteriewModel extends ViewModelConstructorBuilder {
   public username: KnockoutObservable<string>
