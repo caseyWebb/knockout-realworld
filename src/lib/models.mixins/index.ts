@@ -5,6 +5,7 @@ import { currentUser } from 'lib/models/user'
 export {
   LazyMixin,
   PagerMixin,
+  SpreadMixin,
   TransformMixin
 } from '@profiscience/knockout-contrib-model'
 

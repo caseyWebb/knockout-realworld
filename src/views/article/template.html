@@ -2,22 +2,22 @@
 
   <div class="banner">
     <div class="container">
-      <h1>{{article.article.title}}</h1>
-      <article-meta params="article: article.article"></article-meta>
+      <h1>{{article.title}}</h1>
+      <article-meta params="article: article"></article-meta>
     </div>
   </div>
 
   <div class="container page">
     <div class="row article-content">
       <div class="col-md-12">
-        <contrib-markdown params="content: article.article.body"></contrib-markdown>
+        <contrib-markdown params="content: article.body"></contrib-markdown>
       </div>
     </div>
 
     <hr />
 
     <div class="article-actions">
-      <article-meta params="article: article.article"></article-meta>
+      <article-meta params="article: article"></article-meta>
     </div>
 
     <div class="row">

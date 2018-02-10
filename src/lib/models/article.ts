@@ -1,5 +1,5 @@
 import { DataModelConstructorBuilder, PagerMixin } from '@profiscience/knockout-contrib-model'
-import { APIMixin, TransformMixin } from 'lib/models.mixins'
+import { APIMixin, SpreadMixin, TransformMixin } from 'lib/models.mixins'
 import { CommentsModel } from 'lib/models/comment'
 
 const PAGE_SIZE = 10
@@ -26,6 +26,8 @@ export type ArticlesParams = {
 
 export class ArticleModel extends DataModelConstructorBuilder
   .Mixin(APIMixin('articles/:slug'))
+  // response is { "article": { ... } }, spread those props to prevent article.article duplication
+  .Mixin(SpreadMixin('article'))
   <ArticleParams> {
   
   public path = `//article/${this.params.slug}`
@@ -47,7 +49,7 @@ function mapArticles(data: any) {
   return {
     ...data,
     articles: data.articles.map((a: any) => {
-      const m = new ArticleModel({ slug: a.slug }, a)
+      const m = new ArticleModel({ slug: a.slug }, { article: a })
       // the articles in the list will never need to refresh,
       // so dispose the update subscription immediately.
       // this also prevents a bunch of ajax calls on logout
