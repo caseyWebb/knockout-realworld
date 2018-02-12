@@ -1,5 +1,5 @@
 import { DataModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
-import { currentUser, UserModel } from 'lib/models/user'
+import { ProfileModel, currentUser } from 'lib/models/user'
 import { APIMixin, LazyMixin, TransformMixin } from 'lib/models.mixins'
 
 export type CommentsParams = {
@@ -8,15 +8,19 @@ export type CommentsParams = {
 
 export type CommentParams = {
   articleSlug: string
-  id: number
+  id?: number // nullable for new comments
 }
 
 export class CommentModel extends DataModelConstructorBuilder
-  .Mixin(APIMixin('articles/:articleSlug/comments/:id'))
+  .Mixin(APIMixin('articles/:articleSlug/comments/:id?'))
+  .Mixin(TransformMixin((data) => ({
+    ...data,
+    author: new ProfileModel({ username: data.author.username }, { profile: data.author })
+  })))
   <CommentParams> {
+
   public id!: KnockoutObservable<number>
-  public author!: UserModel
-  public isOwn = ko.pureComputed(() => currentUser.username() === this.author.username())
+  public author!: ProfileModel
 }
 
 export class CommentsModel extends DataModelConstructorBuilder
@@ -38,7 +42,7 @@ export class CommentsModel extends DataModelConstructorBuilder
   public comments = ko.observableArray([])
 
   public async postComment({ body }: { body: string }) {
-    const c = new CommentsModel(this.params, { body })
+    const c = new CommentModel(this.params, { body, author: currentUser.toJS() })
     await c.create()
   }
 }

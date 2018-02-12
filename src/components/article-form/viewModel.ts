@@ -36,7 +36,6 @@ export default class ArticleFormViewModel {
       flashText = 'Article Saved!'
     } else {
       const m = new ArticleModel({}, { article })
-      m.dispose() // prevent fetch trigger
       res = await m.create()
       flashText = 'Article Posted!'
     }

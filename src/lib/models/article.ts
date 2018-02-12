@@ -39,23 +39,15 @@ export class ArticleModel extends DataModelConstructorBuilder
 
 export class ArticlesModel extends DataModelConstructorBuilder
   .Mixin(APIMixin('articles/feed?'))
-  .Mixin(TransformMixin(mapArticles))
-  .Mixin(PagerMixin('articles', limitOffsetPaginationStrategy))
+  .Mixin(TransformMixin((data) => ({
+    ...data,
+    articles: data.articles.map((a: any) => new ArticleModel({ slug: a.slug }, { article: a }))
+  })))
+  .Mixin(PagerMixin('articles', (page) => ({
+    limit: PAGE_SIZE,
+    offset: PAGE_SIZE * (page - 1)
+  })))
   <ArticlesParams | KnockoutObservable<any>> {
   
   public articles: KnockoutObservableArray<ArticleModel> = ko.observableArray()
-}
-
-function mapArticles(data: any) {
-  return {
-    ...data,
-    articles: data.articles.map((a: any) => new ArticleModel({ slug: a.slug }, { article: a }))
-  }
-}
-
-function limitOffsetPaginationStrategy(page: number) {
-  return {
-    limit: PAGE_SIZE,
-    offset: PAGE_SIZE * (page - 1)
-  }
 }

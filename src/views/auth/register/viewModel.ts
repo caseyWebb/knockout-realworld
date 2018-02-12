@@ -3,10 +3,10 @@ import { ViewModelConstructorBuilder } from '@profiscience/knockout-contrib-mode
 import { Router, Context } from '@profiscience/knockout-contrib-router'
 import { IContext } from '@profiscience/knockout-contrib-router'
 import { IRoutedComponentInstance } from '@profiscience/knockout-contrib-router-plugins'
-import { UserModel } from 'lib/models/user'
+import { currentUser } from 'lib/models/user'
 import AuthViewModel from '../viewModel'
 
-export default class RegisteriewModel extends ViewModelConstructorBuilder {
+export default class RegisterViewModel extends ViewModelConstructorBuilder {
   public username: KnockoutObservable<string>
   public email: KnockoutObservable<string>
   public password: KnockoutObservable<string>
@@ -23,7 +23,7 @@ export default class RegisteriewModel extends ViewModelConstructorBuilder {
 
   public async register() {
     try {
-      await UserModel.register({
+      await currentUser.register({
         username: this.username(),
         email: this.email(),
         password: this.password()

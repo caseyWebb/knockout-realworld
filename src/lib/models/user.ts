@@ -1,35 +1,69 @@
 import * as ko from 'knockout'
 import { DataModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
-import { APIMixin } from 'lib/models.mixins'
+import { INITIALIZED } from '@profiscience/knockout-contrib-router-plugins'
+import { APIMixin, SpreadMixin } from 'lib/models.mixins'
 
 type Credentials = {
   email: string
   password: string
 }
 
-const CURRENT_USER = 'CURRENT_USER'
+type ProfileParams = {
+  username: string
+}
 
-export class UserModel extends DataModelConstructorBuilder
-  .Mixin(APIMixin('')) // user/users inconsistency
-  <{}> {
-  
-  public loggedIn = ko.observable(false)
+class UserModel<T> extends DataModelConstructorBuilder
+  <T> {
   public username!: KnockoutObservable<string>
-  public email!: KnockoutObservable<string>
-  public token!: KnockoutObservable<string>
   public bio!: string
   public image?: string
+}
+
+export class ProfileModel extends UserModel
+  .Mixin(APIMixin('profiles/:username'))  
+  .Mixin(SpreadMixin('profile'))
+  <ProfileParams> {
+  public isCurrentUser = ko.pureComputed(() => currentUser.loggedIn() && currentUser.username() === this.username())
+}
+
+class CurrentUserModel extends UserModel
+  .Mixin(APIMixin(''))
+  <{}> { // user/users inconsistency
+
+  public email!: KnockoutObservable<string>
+  public token!: KnockoutObservable<string>
+  public loggedIn!: KnockoutObservable<boolean>
+
+  constructor() {
+    super({})
+
+    // could potentially be out of sync, e.g. edited on a different device/browser
+    this.sync()
+  }
+
+  get localStorage() {
+    const json = localStorage.getItem('CURRENT_USER')
+    return json
+      ? JSON.parse(json)
+      : null
+  }
+  set localStorage(u) {
+    if (u) {
+      localStorage.setItem('CURRENT_USER', JSON.stringify(u))
+    } else {
+      localStorage.removeItem('CURRENT_USER')
+    }
+  }
 
   protected async fetch() {
-    const fromLocalStorage = localStorage.getItem(CURRENT_USER)
-    return fromLocalStorage
+    return this.localStorage
       ? {
-          ...JSON.parse(fromLocalStorage),
-          loggedIn: true
-        }
+        ...this.localStorage,
+        loggedIn: true
+      }
       : {
-          loggedIn: false
-        }
+        loggedIn: false
+      }
   }
 
   public async save({ password }: { password?: string } = {}) {
@@ -39,30 +73,42 @@ export class UserModel extends DataModelConstructorBuilder
         password
       }
     })
-    localStorage.setItem(CURRENT_USER, JSON.stringify(updatedUser))
-    await currentUser.update()
+    this.localStorage = updatedUser
+    await this.update()
   }
 
-  public static async register(user: Credentials & { username: string }) {
-    const u = new UserModel({})
-    const res = await u.api.post('users', { data: { user } })
-    localStorage.setItem(CURRENT_USER, JSON.stringify(res.user))
-    u.dispose()
-    await currentUser.update()
+  public async register(user: Credentials & { username: string }) {
+    const res = await this.api.post('users', { data: { user } })
+    this.localStorage = res.user
+    await this.update()
   }
 
-  public static async login(credentials: Credentials) {
-    const u = new UserModel({})
-    const { user } = await u.api.post('users/login', { data: { user: credentials } })
-    localStorage.setItem(CURRENT_USER, JSON.stringify(user))
-    u.dispose()
-    await currentUser.update()
+  public async login(credentials: Credentials) {
+    const { user } = await this.api.post('users/login', { data: { user: credentials } })
+    this.localStorage = user
+    await this.update()
   }
 
   public async logout() {
-    localStorage.removeItem(CURRENT_USER)
-    await currentUser.update()
+    this.localStorage = undefined
+    await this.update()
+  }
+
+  private async sync() {
+    await this[INITIALIZED]
+
+    if (this.loggedIn()) {
+      this.api.get('user')
+        .then(({ user }) => {
+          this.localStorage = user
+          this.update()
+        })
+        .catch((err) => {
+          // tslint:disable-next-line
+          console.error('Failed to fetch updated current user', err)
+        })
+    }
   }
 }
 
-export const currentUser = new UserModel({})
+export const currentUser = new CurrentUserModel()
