@@ -21,19 +21,13 @@ export class CommentModel extends DataModelConstructorBuilder
 
 export class CommentsModel extends DataModelConstructorBuilder
   .Mixin(APIMixin('articles/:articleSlug/comments'))
-  .Mixin(TransformMixin(function mapComments(this: CommentsModel, data: any) {
-    return {
-      ...data,
-      comments: data.comments.map((c: any) => {
-        const m = new CommentModel({
-          articleSlug: this.params.articleSlug,
-          id: c.id
-        }, c)
-        m.dispose()
-        return m
-      })
-    }
-  }))
+  .Mixin(TransformMixin<CommentsParams>((data: any, params) => ({
+    ...data,
+    comments: data.comments.map((c: any) => new CommentModel({
+      articleSlug: params.articleSlug,
+      id: c.id
+    }, c))
+  })))
   // will not initialize until instance.comments is accessed.
   // this allows adding as property of ArticleModel while still
   // casting articles in the ArticlesModel, without fetching comments

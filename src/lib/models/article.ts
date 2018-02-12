@@ -32,8 +32,8 @@ export class ArticleModel extends DataModelConstructorBuilder
   
   public path = `//article/${this.params.slug}`
 
-  // CommentsModel uses the LazyMixin so they are not fetched
-  // unless accessed. This allows sharing this model with the list and editor.
+  // CommentsModel uses the LazyMixin so they are not fetched unless accessed.
+  // This allows sharing this model with the list and editor.
   public comments = new CommentsModel({ articleSlug: this.params.slug as string })
 }
 
@@ -49,14 +49,7 @@ export class ArticlesModel extends DataModelConstructorBuilder
 function mapArticles(data: any) {
   return {
     ...data,
-    articles: data.articles.map((a: any) => {
-      const m = new ArticleModel({ slug: a.slug }, { article: a })
-      // the articles in the list will never need to refresh,
-      // so dispose the update subscription immediately.
-      // this also prevents a bunch of ajax calls on logout
-      m.dispose()
-      return m
-    })
+    articles: data.articles.map((a: any) => new ArticleModel({ slug: a.slug }, { article: a }))
   }
 }
 
