@@ -8,7 +8,7 @@ export type ArticleParams = {
   /**
    * URL interpolation param(s)
    */
-  slug: string
+  slug?: string // nullable for creating new article
 }
 
 export type ArticlesParams = {
@@ -25,15 +25,16 @@ export type ArticlesParams = {
 }
 
 export class ArticleModel extends DataModelConstructorBuilder
-  .Mixin(APIMixin('articles/:slug'))
+  .Mixin(APIMixin('articles/:slug?'))
   // response is { "article": { ... } }, spread those props to prevent article.article duplication
   .Mixin(SpreadMixin('article'))
   <ArticleParams> {
   
   public path = `//article/${this.params.slug}`
 
-  // CommentsModel uses the LazyMixin so that it does not 
-  public comments = new CommentsModel({ articleSlug: this.params.slug })
+  // CommentsModel uses the LazyMixin so they are not fetched
+  // unless accessed. This allows sharing this model with the list and editor.
+  public comments = new CommentsModel({ articleSlug: this.params.slug as string })
 }
 
 export class ArticlesModel extends DataModelConstructorBuilder

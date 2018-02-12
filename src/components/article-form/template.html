@@ -1,0 +1,49 @@
+<div class="editor-page">
+  <div class="container page">
+    <div class="row">
+
+      <div class="col-md-10 offset-md-1 col-xs-12">
+        <form data-bind="event.submit: save">
+          <fieldset>
+            <fieldset class="form-group">
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="Article Title"
+                data-bind="textInput: title"
+              />
+            </fieldset>
+            <fieldset class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="What's this article about?"
+                data-bind="textInput: description"
+              />
+            </fieldset>
+            <fieldset class="form-group">
+              <textarea
+                class="form-control"
+                rows="8"
+                placeholder="Write your article (in markdown)"
+                data-bind="textInput: body"
+              ></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter tags"
+              />
+              <!-- <div class="tag-list"></div> -->
+            </fieldset>
+            <button class="btn btn-lg pull-xs-right btn-primary" type="submit">
+              Publish Article
+            </button>
+          </fieldset>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
