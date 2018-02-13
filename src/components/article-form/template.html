@@ -10,7 +10,7 @@
                 type="text"
                 class="form-control form-control-lg"
                 placeholder="Article Title"
-                data-bind="textInput: title"
+                data-bind="textInput: article.title"
               />
             </fieldset>
             <fieldset class="form-group">
@@ -18,7 +18,7 @@
                 type="text"
                 class="form-control"
                 placeholder="What's this article about?"
-                data-bind="textInput: description"
+                data-bind="textInput: article.description"
               />
             </fieldset>
             <fieldset class="form-group">
@@ -26,7 +26,7 @@
                 class="form-control"
                 rows="8"
                 placeholder="Write your article (in markdown)"
-                data-bind="textInput: body"
+                data-bind="textInput: article.body"
               ></textarea>
             </fieldset>
             <fieldset class="form-group">

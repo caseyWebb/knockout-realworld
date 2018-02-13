@@ -1,5 +1,5 @@
 import * as ko from 'knockout'
-import { DataModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
+import { DataModelConstructorBuilder, nonenumerable } from '@profiscience/knockout-contrib-model'
 import { INITIALIZED } from '@profiscience/knockout-contrib-router-plugins'
 import { APIMixin, SpreadMixin } from 'lib/models.mixins'
 
@@ -23,7 +23,9 @@ export class ProfileModel extends UserModel
   .Mixin(APIMixin('profiles/:username'))  
   .Mixin(SpreadMixin('profile'))
   <ProfileParams> {
-  public isCurrentUser = ko.pureComputed(() => currentUser.loggedIn() && currentUser.username() === this.username())
+  public isCurrentUser = ko.pureComputed(() => {
+    return currentUser.loggedIn() && currentUser.username() === this.username()
+  })
 }
 
 class CurrentUserModel extends UserModel

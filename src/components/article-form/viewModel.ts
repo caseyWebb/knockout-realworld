@@ -1,45 +1,34 @@
-import * as ko from 'knockout'
 import { Router } from '@profiscience/knockout-contrib-router'
-import { merge } from '@profiscience/knockout-contrib-utils'
-import { ArticleModel } from 'lib/models/article'
 import { FLASH_MESSAGE } from '@profiscience/knockout-contrib-router-middleware'
+import { ArticleModel, NewArticleModel } from 'lib/models/article'
 
 export type ArticleFormParams = {
   article?: ArticleModel
 }
 
 export default class ArticleFormViewModel {
-  public article?: ArticleModel
+  public article: ArticleModel
+  public isNew = false
 
   constructor(params: ArticleFormParams) {
-    this.article = params.article
+    if (params.article) {
+      this.article = params.article
+    } else {
+      this.isNew = true
+      this.article = new NewArticleModel()
+    }
   }
 
-  public title = ko.observable('')
-  public description = ko.observable('')
-  public body = ko.observable('')
-  public tags = ko.observableArray([])
-
   public async save() {
-    const article = ko.toJS({
-      title: this.title,
-      description: this.description,
-      body: this.body,
-      tags: this.tags
-    })
-    let res: any
-    let flashText: string
-    if (this.article) {
-      merge(this.article, article)
-      this.article.dispose()
-      res = await this.article.save()
-      flashText = 'Article Saved!'
-    } else {
-      const m = new ArticleModel({}, { article })
-      res = await m.create()
-      flashText = 'Article Posted!'
-    }
-    Router.update(`//article/${res.article.slug}`, {
+    this.article.dispose()
+    
+    const [method, flashText] = this.isNew
+      ? ['create', 'Article Posted!']
+      : ['save', 'Article Saved!']
+    
+    const { article: { slug } } = await (this.article as any)[method]()
+    
+    Router.update(`//article/${slug}`, {
       with: {
         [FLASH_MESSAGE]: {
           type: 'success',
