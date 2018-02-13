@@ -1,13 +1,13 @@
 import { Router } from '@profiscience/knockout-contrib-router'
 import { FLASH_MESSAGE } from '@profiscience/knockout-contrib-router-middleware'
-import { ArticleModel, NewArticleModel } from 'lib/models/article'
+import { EditableArticleModel, NewArticleModel } from 'lib/models/article'
 
 export type ArticleFormParams = {
-  article?: ArticleModel
+  article?: EditableArticleModel
 }
 
 export default class ArticleFormViewModel {
-  public article: ArticleModel
+  public article: EditableArticleModel
   public isNew = false
 
   constructor(params: ArticleFormParams) {

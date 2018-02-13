@@ -8,21 +8,11 @@ import { ProfileModel, currentUser } from 'lib/models/user'
 const PAGE_SIZE = 10
 
 export type ArticleParams = {
-  /**
-   * URL interpolation param(s)
-   */
   slug?: string // nullable for creating new article
 }
 
 export type ArticlesParams = {
-  /**
-   * URL interpolation param(s)
-   */
   feed?: KnockoutObservable<boolean> | KnockoutComputed<boolean>
-
-  /**
-   * Querystring param(s)
-   */
   author?: KnockoutObservable<string>
   tag?: KnockoutObservable<string | void> | KnockoutComputed<string | void>
   favorited?: string
@@ -37,18 +27,19 @@ export class ArticleModel extends DataModelConstructorBuilder
   .Mixin(SpreadMixin('article'))
   <ArticleParams> {
   
-  public favorited!: KnockoutObservable<boolean>
-  public favoritesCount!: KnockoutObservable<number>
-
+  public slug!: string
+  public favorited = ko.observable(false)
+  public favoritesCount = ko.observable(0)
+  
   public paths = {
     show: `//article/${this.params.slug}`,
     edit: `//editor/${this.params.slug}`
   }
-
+  
   // CommentsModel uses the LazyMixin so they are not fetched unless accessed.
   // This allows sharing this model with the list and editor.
   public comments = new CommentsModel({ articleSlug: this.params.slug as string })
-
+  
   public async toggleFavorite() {
     const opts = { params: { slug: this.params.slug } }
     const method = this.favorited() ? 'delete' : 'post'
@@ -62,7 +53,14 @@ export class ArticleModel extends DataModelConstructorBuilder
   }
 }
 
-export class NewArticleModel extends ArticleModel {
+export class EditableArticleModel extends ArticleModel {
+  public title = ko.observable('')
+  public description = ko.observable('')
+  public body = ko.observable('')
+  public tagList = ko.observableArray()
+}
+
+export class NewArticleModel extends EditableArticleModel {
   constructor() {
     super({}, {
       article: {

@@ -10,10 +10,16 @@
           <p>
             {{profile.bio}}
           </p>
-          <button class="btn btn-sm btn-outline-secondary action-btn">
+          <button class="btn btn-sm action-btn btn-outline-secondary" data-bind="click: profile.toggleFollowing">
             <i class="ion-plus-round"></i>
             &nbsp;
-            Follow {{profile.username}}
+            {{#if profile.following}}
+            Following
+            {{/if}}
+            {{#ifnot profile.following}}
+            Follow
+            {{/ifnot}}
+            {{profile.username}}
           </button>
         </div>
 

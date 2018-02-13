@@ -18,10 +18,16 @@
     </button>
   {{/if}}
   {{#ifnot article.author.isCurrentUser}}
-    <button class="btn btn-sm btn-outline-secondary">
+    <button class="btn btn-sm btn-outline-secondary" data-bind="click: article.author.toggleFollowing">
       <i class="ion-plus-round"></i>
       &nbsp;
-      Follow {{article.author.username}} <span class="counter">(10)</span>
+      {{#if article.author.following}}
+        Following
+      {{/if}}
+      {{#ifnot article.author.following}}
+        Follow
+      {{/ifnot}}
+      {{article.author.username}}
     </button>
     &nbsp;&nbsp;
     <button class="btn btn-sm btn-outline-primary" data-bind="click: article.toggleFavorite">

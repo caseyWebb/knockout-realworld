@@ -13,7 +13,7 @@ export const APIMixin = createRESTMixin({
   baseURL: 'https://conduit.productionready.io/api',
   cors: true,
   headers: ko.pureComputed(() => currentUser.loggedIn()
-    ? { Authorization: `Token ${currentUser.token()}` }
+    ? { Authorization: `Token ${currentUser.token}` }
     : {}
   )
 })

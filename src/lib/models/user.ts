@@ -12,33 +12,37 @@ type ProfileParams = {
   username: string
 }
 
-class UserModel<T> extends DataModelConstructorBuilder
-  <T> {
-  public username!: KnockoutObservable<string>
-  public bio!: string
-  public image?: string
-}
-
-export class ProfileModel extends UserModel
+export class ProfileModel extends DataModelConstructorBuilder
   .Mixin(APIMixin('profiles/:username'))  
   .Mixin(SpreadMixin('profile'))
   <ProfileParams> {
   
+  public username!: string
+  public following = ko.observable(false)
+
   public paths = {
     profile: `//profile/${this.params.username}`,
     favorites: `//profile/${this.params.username}/favorites`
   }
   
-  public isCurrentUser = ko.pureComputed(() => currentUser.loggedIn() && currentUser.username() === this.username())
+  public isCurrentUser = ko.pureComputed(() => currentUser.loggedIn() && currentUser.username() === this.username)
+
+  public async toggleFollowing() {
+    const opts = { params: { username: this.params.username } }
+    const method = this.following() ? 'delete' : 'post'
+    await this.api[method]('follow', opts)
+    this.following.toggle()
+  }
 }
 
-class CurrentUserModel extends UserModel
+class CurrentUserModel extends DataModelConstructorBuilder
   .Mixin(APIMixin(''))
   <{}> { // user/users inconsistency
 
-  public email!: KnockoutObservable<string>
-  public token!: KnockoutObservable<string>
-  public loggedIn!: KnockoutObservable<boolean>
+  public token!: string
+  public email = ko.observable('')
+  public username = ko.observable('')
+  public loggedIn = ko.observable(false)
 
   constructor() {
     super({})
