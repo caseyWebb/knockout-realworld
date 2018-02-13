@@ -1,5 +1,6 @@
 import { Route } from '@profiscience/knockout-contrib-router'
 import articles from './articles'
+import favorites from './favorites'
 
 export default new Route('/profile/:username', {
   component: () => ({
@@ -7,6 +8,7 @@ export default new Route('/profile/:username', {
     viewModel: import('./viewModel')
   }),
   children: [
-    articles
+    articles,
+    favorites
   ]
 })

@@ -25,7 +25,8 @@ export class ProfileModel extends UserModel
   <ProfileParams> {
   
   public paths = {
-    profile: `//profile/${this.params.username}`
+    profile: `//profile/${this.params.username}`,
+    favorites: `//profile/${this.params.username}/favorites`
   }
   
   public isCurrentUser = ko.pureComputed(() => currentUser.loggedIn() && currentUser.username() === this.username())
