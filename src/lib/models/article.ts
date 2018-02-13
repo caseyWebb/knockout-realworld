@@ -1,3 +1,5 @@
+import '@profiscience/knockout-contrib-observable-fn/increment'
+import '@profiscience/knockout-contrib-observable-fn/toggle'
 import { DataModelConstructorBuilder, PagerMixin } from '@profiscience/knockout-contrib-model'
 import { APIMixin, SpreadMixin, TransformMixin } from 'lib/models.mixins'
 import { CommentsModel } from 'lib/models/comment'
@@ -35,6 +37,9 @@ export class ArticleModel extends DataModelConstructorBuilder
   .Mixin(SpreadMixin('article'))
   <ArticleParams> {
   
+  public favorited!: KnockoutObservable<boolean>
+  public favoritesCount!: KnockoutObservable<number>
+
   public paths = {
     show: `//article/${this.params.slug}`,
     edit: `//editor/${this.params.slug}`
@@ -43,6 +48,18 @@ export class ArticleModel extends DataModelConstructorBuilder
   // CommentsModel uses the LazyMixin so they are not fetched unless accessed.
   // This allows sharing this model with the list and editor.
   public comments = new CommentsModel({ articleSlug: this.params.slug as string })
+
+  public async toggleFavorite() {
+    const opts = { params: { slug: this.params.slug } }
+    const method = this.favorited() ? 'delete' : 'post'
+    await this.api[method]('favorite', opts)
+    this.favorited.toggle()
+    if (this.favorited()) {
+      this.favoritesCount.increment()
+    } else {
+      this.favoritesCount.decrement()
+    }
+  }
 }
 
 export class NewArticleModel extends ArticleModel {

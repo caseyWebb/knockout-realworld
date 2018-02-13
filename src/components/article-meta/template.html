@@ -24,10 +24,16 @@
       Follow {{article.author.username}} <span class="counter">(10)</span>
     </button>
     &nbsp;&nbsp;
-    <button class="btn btn-sm btn-outline-primary">
+    <button class="btn btn-sm btn-outline-primary" data-bind="click: article.toggleFavorite">
       <i class="ion-heart"></i>
       &nbsp;
-      Favorite Post <span class="counter">({{article.favoritesCount}})</span>
+      {{#if article.favorited}}
+        Unfavorite
+      {{/if}}
+      {{#ifnot article.favorited}}
+        Favorite
+      {{/ifnot}}
+      Post <span class="counter">({{article.favoritesCount}})</span>
     </button>
   {{/ifnot}}
 </div>
