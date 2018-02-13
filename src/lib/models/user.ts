@@ -23,9 +23,12 @@ export class ProfileModel extends UserModel
   .Mixin(APIMixin('profiles/:username'))  
   .Mixin(SpreadMixin('profile'))
   <ProfileParams> {
-  public isCurrentUser = ko.pureComputed(() => {
-    return currentUser.loggedIn() && currentUser.username() === this.username()
-  })
+  
+  public paths = {
+    profile: `//profile/${this.params.username}`
+  }
+  
+  public isCurrentUser = ko.pureComputed(() => currentUser.loggedIn() && currentUser.username() === this.username())
 }
 
 class CurrentUserModel extends UserModel

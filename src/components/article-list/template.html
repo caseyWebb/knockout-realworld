@@ -1,0 +1,24 @@
+{{#foreach articles.articles}}
+  <div class="article-preview">
+    <div class="article-meta">
+      <a data-bind="path: author.paths.profile"><img src="{{author.image}}" /></a>
+      <div class="info">
+        <a data-bind="path: author.paths.profile" class="author">{{author.username}}</a>
+        <span class="date">{{createdAt}}</span>
+      </div>
+      <button class="btn btn-outline-primary btn-sm pull-xs-right">
+        <i class="ion-heart"></i> {{favoritesCount}}
+      </button>
+    </div>
+    <!-- Set in ArticleModel -->
+    <a data-bind="path: paths.show" class="preview-link">
+      <h1>{{title}}</h1>
+      <p>{{description}}</p>
+      <span>Read more...</span>
+    </a>
+  </div>
+{{/foreach}}
+
+{{#if articles.hasMore}}
+  <button class="btn btn-outline-primary" data-bind="click: articles.getMore">Load more articles...</button>
+{{/if}}

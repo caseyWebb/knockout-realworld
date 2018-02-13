@@ -1,7 +1,7 @@
 <div class="article-meta">
-  <a href=""><img src="{{article.author.image}}" /></a>
+  <a data-bind="path: article.author.paths.profile"><img src="{{article.author.image}}" /></a>
   <div class="info">
-    <a href="" class="author">{{article.author.username}}</a>
+    <a data-bind="path: article.author.paths.profile" class="author">{{article.author.username}}</a>
     <span class="date">{{article.createdAt}}</span>
   </div>
   {{#if article.author.isCurrentUser}}
@@ -11,11 +11,11 @@
       Edit Post
     </a>
     &nbsp;&nbsp;
-    <!-- <button class="btn btn-sm btn-outline-primary">
-      <i class="ion-heart"></i>
+    <button class="btn btn-sm btn-outline-danger" data-bind="click: deleteArticle">
+      <i class="ion-trash-a"></i>
       &nbsp;
-      Favorite Post <span class="counter">({{article.favoritesCount}})</span>
-    </button> -->
+      Delete Post
+    </button>
   {{/if}}
   {{#ifnot article.author.isCurrentUser}}
     <button class="btn btn-sm btn-outline-secondary">

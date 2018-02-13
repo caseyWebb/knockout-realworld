@@ -16,11 +16,12 @@ export type ArticlesParams = {
   /**
    * URL interpolation param(s)
    */
-  feed: KnockoutObservable<boolean> | KnockoutComputed<boolean>
+  feed?: KnockoutObservable<boolean> | KnockoutComputed<boolean>
 
   /**
    * Querystring param(s)
    */
+  author?: KnockoutObservable<string>
   tag?: KnockoutObservable<string | void> | KnockoutComputed<string | void>
   favorited?: string
 }

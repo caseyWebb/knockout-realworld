@@ -8,7 +8,7 @@
         <img src="{{author.image}}" class="comment-author-img" />
       </a>
       &nbsp;
-      <a href="" class="comment-author">{{author.username}}</a>
+      <a class="comment-author" data-bind="path: author.paths.profile">{{author.username}}</a>
       <span class="date-posted">{{createdAt}}</span>
       {{#if author.isCurrentUser}}
         <span class="mod-options">
