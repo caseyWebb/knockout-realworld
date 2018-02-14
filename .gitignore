@@ -2,6 +2,7 @@
 
 # Generated Files
 .cache/
+coverage/
 dist/
 
 # dependencies
