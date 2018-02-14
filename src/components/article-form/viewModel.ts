@@ -38,8 +38,10 @@ export default class ArticleFormViewModel {
     if (delimiters.indexOf(e.keyCode) > -1) {
       const $input = e.target as HTMLInputElement
       const tag = $input.value
-      $input.value = ''
-      return this.addTag(tag)
+      if (tag) {
+        $input.value = ''
+        return this.addTag(tag)
+      }
     }
     return true
   }
