@@ -18,11 +18,17 @@
     </button>
   {{/if}}
   {{#ifnot article.author.isCurrentUser}}
-    <button class="btn btn-sm btn-outline-secondary" data-bind="click: article.author.toggleFollowing">
+    <button
+      class="btn btn-sm btn-outline-secondary"
+      data-bind="
+        click: article.author.toggleFollowing,
+        css: article.author.following() ? 'btn-secondary': 'btn-outline-secondary'
+      "
+    >
       <i class="ion-plus-round"></i>
       &nbsp;
       {{#if article.author.following}}
-        Following
+        Unfollow
       {{/if}}
       {{#ifnot article.author.following}}
         Follow
@@ -30,7 +36,13 @@
       {{article.author.username}}
     </button>
     &nbsp;&nbsp;
-    <button class="btn btn-sm btn-outline-primary" data-bind="click: article.toggleFavorite">
+    <button
+      class="btn btn-sm"
+      data-bind="
+        click: article.toggleFavorite,
+        css: article.favorited() ? 'btn-primary': 'btn-outline-primary'
+      "
+    >
       <i class="ion-heart"></i>
       &nbsp;
       {{#if article.favorited}}

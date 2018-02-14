@@ -6,7 +6,13 @@
         <a data-bind="path: author.paths.profile" class="author">{{author.username}}</a>
         <span class="date">{{createdAt | date.format:'MMMM D, YYYY' }}</span>
       </div>
-      <button class="btn btn-outline-primary btn-sm pull-xs-right" data-bind="click: toggleFavorite">
+      <button
+        class="btn btn-sm pull-xs-right"
+        data-bind="
+          click: toggleFavorite,
+          css: favorited() ? 'btn-primary': 'btn-outline-primary'
+        "
+      >
         <i class="ion-heart"></i> {{favoritesCount}}
       </button>
     </div>
