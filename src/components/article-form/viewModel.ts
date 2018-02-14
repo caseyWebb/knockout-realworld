@@ -19,6 +19,31 @@ export default class ArticleFormViewModel {
     }
   }
 
+  public addTag(tag: string) {
+    if (this.article.tagList.indexOf(tag) < 0) this.article.tagList.push(tag)
+  }
+
+  public removeTag(tag: string) {
+    this.article.tagList.remove(tag)
+  }
+
+  public tagListKeydownHandler(data: any, e: KeyboardEvent) {
+    const delimiters = [
+      9,  // tab
+      13, // enter
+      32, // space
+      39, // right arrow
+      188 // comma
+    ]
+    if (delimiters.indexOf(e.keyCode) > -1) {
+      const $input = e.target as HTMLInputElement
+      const tag = $input.value
+      $input.value = ''
+      return this.addTag(tag)
+    }
+    return true
+  }
+
   public async save() {
     this.article.dispose()
     

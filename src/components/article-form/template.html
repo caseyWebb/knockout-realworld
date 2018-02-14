@@ -34,8 +34,16 @@
                 type="text"
                 class="form-control"
                 placeholder="Enter tags"
+                data-bind="event.keydown: tagListKeydownHandler"
               />
-              <!-- <div class="tag-list"></div> -->
+              <div class="tag-list">
+                {{#foreach article.tagList}}
+                  <span class="tag-default tag-pill">
+                    <i class="ion-close-round" data-bind="click: $component.removeTag"></i>
+                    {{$data}}
+                  </span>
+                {{/foreach}}
+              </div>
             </fieldset>
             <button class="btn btn-lg pull-xs-right btn-primary" type="submit">
               Publish Article
