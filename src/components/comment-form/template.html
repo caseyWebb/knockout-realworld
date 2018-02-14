@@ -1,16 +1,23 @@
-<form class="card comment-form" data-bind="event.submit: post">
-  <div class="card-block">
-    <textarea 
-      class="form-control"
-      placeholder="Write a comment..."
-      rows="3"
-      data-bind="value: body">
-    </textarea>
+{{#if currentUser.loggedIn}}
+  <form class="card comment-form" data-bind="event.submit: post">
+    <div class="card-block">
+      <textarea 
+        class="form-control"
+        placeholder="Write a comment..."
+        rows="3"
+        data-bind="value: body">
+      </textarea>
+    </div>
+    <div class="card-footer">
+      <img src="{{currentUser.image}}" class="comment-author-img" />
+      <button class="btn btn-sm btn-primary">
+        Post Comment
+      </button>
+    </div>
+  </form>
+{{/if}}
+{{#ifnot currentUser.loggedIn}}
+  <div class="alert">
+    <a data-bind="path: '//login'">Sign in</a> or <a data-bind="path: '//register'">Sign up</a> to post a comment
   </div>
-  <div class="card-footer">
-    <img src="{{currentUser.image}}" class="comment-author-img" />
-    <button class="btn btn-sm btn-primary">
-      Post Comment
-    </button>
-  </div>
-</form>
+{{/ifnot}}
