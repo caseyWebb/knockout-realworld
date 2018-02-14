@@ -18,7 +18,7 @@ module.exports = {
   entry: path.join(__dirname, 'src/index.ts'),
   output: {
     filename: 'entry.[hash].js',
-    chunkFilename: 'chunk.[id].[chunkhash].js',
+    chunkFilename: 'chunk.[id].[name].[chunkhash].js',
     path: path.join(__dirname, 'dist'),
     publicPath: PRODUCTION
       ? '/knockout-realworld/'  // gh-pages
