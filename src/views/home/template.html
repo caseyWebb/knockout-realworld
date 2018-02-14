@@ -39,6 +39,11 @@
                   click: showGlobalFeed
                 " href="#">Global Feed</a>
               </li>
+              {{#if query.tag}}
+                <li class="nav-item">
+                  <a class="nav-link active">#{{query.tag}}</a>
+                </li>
+              {{/if}}
             </ul>
           </div>
         {{/if}}
