@@ -2,9 +2,9 @@ import 'jest-fetch-mock'; (global as any).fetch = require('jest-fetch-mock')
 
 import { TagsModel } from './tags'
 
-describe('lib/models/tags', () => {
+describe('TagsModel', () => {
   test('initializes with the correct endpoint', async () => {
-    const { mock } = fetch.mockResponseOnce('') as any
+    const { mock } = fetch.mockResponseOnce('{}') as any
 
     await TagsModel.create({})
     

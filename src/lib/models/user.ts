@@ -8,26 +8,27 @@ type Credentials = {
 }
 
 // can't import APIMixin from lib/model.mixins b/c that would create a circular dependency
+const headers = ko.observable()
 const APIMixin = createRESTMixin({
-  baseURL: 'https://conduit.productionready.io/api',
+  baseURL: 'https://conduit.productionready.io',
   cors: true,
-  headers: ko.pureComputed(() => currentUser.loggedIn()
-    ? { Authorization: `Token ${currentUser.token}` }
-    : {}
-  )
+  headers
 })
 
-class CurrentUserModel extends DataModelConstructorBuilder
-  .Mixin(APIMixin(''))
-  <{}> { // user/users inconsistency
+export class CurrentUserModel extends DataModelConstructorBuilder
+  .Mixin(APIMixin('api')) // user/users inconsistency, need to make param optional but for now prevents double //
+  <{}> { 
 
   public token!: string
   public email = ko.observable('')
   public username = ko.observable('')
+
   public loggedIn = ko.observable(false)
 
   constructor() {
     super({})
+
+    nonenumerable(this, 'loggedIn')
 
     // could potentially be out of sync, e.g. edited on a different device/browser
     this.sync()
@@ -54,7 +55,10 @@ class CurrentUserModel extends DataModelConstructorBuilder
         loggedIn: true
       }
       : {
-        loggedIn: false
+        loggedIn: false,
+        token: undefined,
+        email: undefined,
+        username: undefined
       }
   }
 
@@ -90,6 +94,7 @@ class CurrentUserModel extends DataModelConstructorBuilder
     await this[INITIALIZED]
 
     if (this.loggedIn()) {
+      headers({ Authorization: `Token ${this.token}` })
       this.api.get('user')
         .then(({ user }) => {
           this.localStorage = user
