@@ -1,0 +1,10 @@
+<ul class="tag-list">
+  {{#foreach tags}}
+  <a class="tag-default tag-pill tag-outline" data-bind="path: path">
+    {{text}}
+  </a>
+  {{/foreach}}
+  {{#if numMore}}
+    and {{numMore}} more...
+  {{/if}}
+</ul>
