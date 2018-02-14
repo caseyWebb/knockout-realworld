@@ -2,7 +2,7 @@
   <a data-bind="path: article.author.paths.profile"><img src="{{article.author.image}}" /></a>
   <div class="info">
     <a data-bind="path: article.author.paths.profile" class="author">{{article.author.username}}</a>
-    <span class="date">{{article.createdAt}}</span>
+    <span class="date">{{article.createdAt | date.format:'MMMM D, YYYY'}}</span>
   </div>
   {{#if article.author.isCurrentUser}}
     <a class="btn btn-sm btn-outline-secondary" data-bind="path: article.paths.edit">

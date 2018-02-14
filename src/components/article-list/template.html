@@ -4,7 +4,7 @@
       <a data-bind="path: author.paths.profile"><img src="{{author.image}}" /></a>
       <div class="info">
         <a data-bind="path: author.paths.profile" class="author">{{author.username}}</a>
-        <span class="date">{{createdAt}}</span>
+        <span class="date">{{createdAt | date.format:'MMMM D, YYYY' }}</span>
       </div>
       <button class="btn btn-outline-primary btn-sm pull-xs-right" data-bind="click: toggleFavorite">
         <i class="ion-heart"></i> {{favoritesCount}}

@@ -1,3 +1,4 @@
+import '@profiscience/knockout-contrib-filters/date.format'
 import { ViewModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
 import { CommentsModel } from 'lib/models/comment'
 

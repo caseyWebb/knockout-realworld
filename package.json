@@ -11,6 +11,7 @@
     "deploy": "./scripts/deploy.sh"
   },
   "dependencies": {
+    "@profiscience/knockout-contrib-filters": "^0.0.2",
     "@profiscience/knockout-contrib-framework": "^1.0.0-alpha.5",
     "@profiscience/knockout-contrib-model": "^1.0.0-alpha.8",
     "@profiscience/knockout-contrib-observable-fn": "^1.0.0-alpha.10",

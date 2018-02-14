@@ -9,7 +9,7 @@
       </a>
       &nbsp;
       <a class="comment-author" data-bind="path: author.paths.profile">{{author.username}}</a>
-      <span class="date-posted">{{createdAt}}</span>
+      <span class="date-posted">{{createdAt | date.format:'MMMM D, YYYY'}}</span>
       {{#if author.isCurrentUser}}
         <span class="mod-options">
           <i class="ion-edit"></i>

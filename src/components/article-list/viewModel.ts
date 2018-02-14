@@ -1,3 +1,4 @@
+import '@profiscience/knockout-contrib-filters/date.format'
 import { ArticlesModel } from 'lib/models/article'
 
 type ArticleListParams = {

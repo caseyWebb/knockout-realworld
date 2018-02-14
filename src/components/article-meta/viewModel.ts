@@ -1,3 +1,4 @@
+import '@profiscience/knockout-contrib-filters/date.format'
 import { ViewModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
 import { Router } from '@profiscience/knockout-contrib-router'
 import { FLASH_MESSAGE } from '@profiscience/knockout-contrib-router-middleware'
