@@ -24,6 +24,9 @@
       {{/if}}
       {{#ifnot currentUser.loggedIn}}
         <li class="nav-item">
+          <a class="nav-link" data-bind="path: '//login'">Sign in</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" data-bind="path: '//register'">Sign up</a>
         </li>
       {{/ifnot}}
