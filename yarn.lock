@@ -170,6 +170,10 @@
     "@profiscience/knockout-contrib-observable-fn-to-string" "^1.0.0-alpha.4"
     "@profiscience/knockout-contrib-observable-fn-toggle" "^0.0.2"
 
+"@profiscience/knockout-contrib-querystring@^0.0.1-alpha.8":
+  version "0.0.1-alpha.9"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-querystring/-/knockout-contrib-querystring-0.0.1-alpha.9.tgz#cd09ac11c8626b2e7794966ee12a34f8731be4bf"
+
 "@profiscience/knockout-contrib-router-middleware-flash-message@^1.0.0-alpha.8":
   version "1.0.0-alpha.8"
   resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-router-middleware-flash-message/-/knockout-contrib-router-middleware-flash-message-1.0.0-alpha.8.tgz#edee12ba95fdfb5462a912a5461109a88773de88"
