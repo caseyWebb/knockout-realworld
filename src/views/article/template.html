@@ -25,9 +25,9 @@
     <div class="row">
       <div class="col-xs-12 col-md-8 offset-md-2">
         {{#if currentUser.loggedIn}}
-          <comment-form params="comments: article.comments"></comment-form>
+          <comment-form params="comments: comments"></comment-form>
         {{/if}}
-        <comment-list params="comments: article.comments"></comment-list>
+        <comment-list params="comments: comments"></comment-list>
       </div>
     </div>
   </div>

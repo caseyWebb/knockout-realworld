@@ -3,7 +3,6 @@ import { createRESTMixin } from '@profiscience/knockout-contrib-model'
 import { currentUser } from 'lib/models/user'
 
 export {
-  LazyMixin,
   PagerMixin,
   SpreadMixin,
   TransformMixin
