@@ -1,6 +1,6 @@
 import { Router } from '@profiscience/knockout-contrib-router'
 import { FLASH_MESSAGE } from '@profiscience/knockout-contrib-router-middleware'
-import { EditableArticleModel, NewArticleModel } from 'lib/models/article'
+import { EditableArticleModel, NewArticleModel } from 'src/models/article'
 
 export type ArticleFormParams = {
   article?: EditableArticleModel

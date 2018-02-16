@@ -1,7 +1,7 @@
 import { DataModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
-import { ProfileModel } from 'lib/models/profile'
-import { currentUser } from 'lib/models/user'
-import { APIMixin, TransformMixin } from 'lib/models.mixins'
+import { ProfileModel } from 'src/models/profile'
+import { currentUser } from 'src/models/user'
+import { APIMixin, TransformMixin } from 'src/models.mixins'
 
 export type CommentsParams = {
   articleSlug: string

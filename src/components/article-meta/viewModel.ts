@@ -2,7 +2,7 @@ import '@profiscience/knockout-contrib-filters/date.format'
 import { ViewModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
 import { Router } from '@profiscience/knockout-contrib-router'
 import { FLASH_MESSAGE } from '@profiscience/knockout-contrib-router-middleware'
-import { ArticleModel } from 'lib/models/article'
+import { ArticleModel } from 'src/models/article'
 
 export default class ArticleMetaComponent extends ViewModelConstructorBuilder {
   public article: ArticleModel

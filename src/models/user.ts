@@ -7,7 +7,7 @@ type Credentials = {
   password: string
 }
 
-// can't import APIMixin from lib/model.mixins b/c that would create a circular dependency
+// can't import APIMixin from src/model.mixins b/c that would create a circular dependency
 const headers = ko.observable()
 const APIMixin = createRESTMixin({
   baseURL: 'https://conduit.productionready.io',

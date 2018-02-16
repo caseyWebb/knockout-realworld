@@ -1,6 +1,6 @@
 import { ViewModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
-import { CommentsModel } from 'lib/models/comment'
-import { currentUser } from 'lib/models/user'
+import { CommentsModel } from 'src/models/comment'
+import { currentUser } from 'src/models/user'
 
 export type CommentFormParams = {
   comments: CommentsModel

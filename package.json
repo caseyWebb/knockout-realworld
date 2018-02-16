@@ -31,6 +31,7 @@
     "html-webpack-plugin": "^2.30.1",
     "jest": "^22.3.0",
     "jest-fetch-mock": "^1.4.1",
+    "jest-jquery-matchers": "^2.0.1",
     "jest-localstorage-mock": "^2.2.0",
     "jest-raw-loader": "^1.0.1",
     "script-ext-html-webpack-plugin": "^1.8.8",
@@ -56,9 +57,11 @@
       "ts"
     ],
     "moduleNameMapper": {
-      "^lib/(.*)$": "<rootDir>/src/lib/$1"
+      "^src/(.*)$": "<rootDir>/src/$1"
     },
-    "setupFiles": ["jest-localstorage-mock"],
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ],
     "testRegex": "(__tests__/[^_].*|test)\\.ts$",
     "transform": {
       "^.+\\.[tj]s$": "ts-jest",

@@ -50,8 +50,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      // resolve 'lib/*' imports, like 'lib/models/user'
-      'lib': path.join(__dirname, 'src/lib/')
+      'src': path.join(__dirname, 'src/')
     },
     extensions: [
       '.ts',

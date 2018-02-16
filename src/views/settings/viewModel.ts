@@ -1,7 +1,7 @@
 import { FLASH_MESSAGE } from '@profiscience/knockout-contrib-router-middleware'
 import { ViewModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
 import { Router } from '@profiscience/knockout-contrib-router'
-import { currentUser } from 'lib/models/user'
+import { currentUser } from 'src/models/user'
 
 export default class SettingsViewModel extends ViewModelConstructorBuilder {
   public currentUser = currentUser

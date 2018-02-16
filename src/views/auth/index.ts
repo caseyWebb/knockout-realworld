@@ -1,6 +1,6 @@
 import { Context, Route } from '@profiscience/knockout-contrib-router'
 import { INITIALIZED } from '@profiscience/knockout-contrib-router-plugins'
-import { currentUser } from 'lib/models/user'
+import { currentUser } from 'src/models/user'
 
 export default new Route('/', {
   async redirect() {

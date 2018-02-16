@@ -1,9 +1,9 @@
 import * as ko from 'knockout'
 import { ViewModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
 import Query from '@profiscience/knockout-contrib-querystring'
-import { ArticlesModel } from 'lib/models/article'
-import { TagsModel } from 'lib/models/tags'
-import { currentUser } from 'lib/models/user'
+import { ArticlesModel } from 'src/models/article'
+import { TagsModel } from 'src/models/tags'
+import { currentUser } from 'src/models/user'
 
 export default class extends ViewModelConstructorBuilder {
   public currentUser = currentUser

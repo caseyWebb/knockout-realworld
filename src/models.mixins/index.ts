@@ -1,6 +1,6 @@
 import * as ko from 'knockout'
 import { createRESTMixin } from '@profiscience/knockout-contrib-model'
-import { currentUser } from 'lib/models/user'
+import { currentUser } from 'src/models/user'
 
 export {
   PagerMixin,

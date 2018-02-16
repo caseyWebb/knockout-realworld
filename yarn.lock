@@ -3970,6 +3970,10 @@ jest-jasmine2@^22.3.0:
     jest-snapshot "^22.2.0"
     source-map-support "^0.5.0"
 
+jest-jquery-matchers@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/jest-jquery-matchers/-/jest-jquery-matchers-2.0.1.tgz#99ebc261d745302c3afe7f2f28c233b11d62723c"
+
 jest-leak-detector@^22.1.0:
   version "22.1.0"
   resolved "https://registry.yarnpkg.com/jest-leak-detector/-/jest-leak-detector-22.1.0.tgz#08376644cee07103da069baac19adb0299b772c2"

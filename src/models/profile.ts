@@ -1,7 +1,7 @@
 import * as ko from 'knockout'
 import { DataModelConstructorBuilder } from '@profiscience/knockout-contrib-model'
 import { INITIALIZED } from '@profiscience/knockout-contrib-router-plugins'
-import { APIMixin, SpreadMixin } from 'lib/models.mixins'
+import { APIMixin, SpreadMixin } from 'src/models.mixins'
 import { currentUser } from './user'
 
 type ProfileParams = {

@@ -1,9 +1,9 @@
 import '@profiscience/knockout-contrib-observable-fn/increment'
 import '@profiscience/knockout-contrib-observable-fn/toggle'
 import { DataModelConstructorBuilder, PagerMixin } from '@profiscience/knockout-contrib-model'
-import { APIMixin, SpreadMixin, TransformMixin } from 'lib/models.mixins'
-import { ProfileModel } from 'lib/models/profile'
-import { currentUser } from 'lib/models/user'
+import { APIMixin, SpreadMixin, TransformMixin } from 'src/models.mixins'
+import { ProfileModel } from 'src/models/profile'
+import { currentUser } from 'src/models/user'
 
 const PAGE_SIZE = 10
 
