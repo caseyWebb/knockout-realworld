@@ -1,6 +1,6 @@
 import 'jest-fetch-mock'; (global as any).fetch = require('jest-fetch-mock')
 
-import { TagsModel } from './tags'
+import { TagsModel } from '../tags'
 
 describe('TagsModel', () => {
   test('initializes with the correct endpoint', async () => {
