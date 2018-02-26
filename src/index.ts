@@ -4,9 +4,9 @@ import { Router } from '@profiscience/knockout-contrib-router'
 const app = new App({
   hashbang: true,
   activePathCSSClass: 'active',
-  base: PRODUCTION
-    ? '/knockout-realworld' // gh-pages
-    : ''                    // development
+  base: DEBUG
+    ? ''                    // development
+    : '/knockout-realworld' // gh-pages
 })
 
 app.start({

@@ -1,41 +1,52 @@
 'use strict'
 
-const PRODUCTION = process.env.NODE_ENV === 'production'
-
+const os = require('os')
 const path = require('path')
-const HappyPack = require('happypack')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ScriptExtPlugin = require('script-ext-html-webpack-plugin')
 const {
   DefinePlugin,
   NamedModulesPlugin
 } = require('webpack')
-const { KnockoutContribFrameworkWebpackPlugin } = require('@profiscience/knockout-contrib-framework/webpack')
+const { KnockoutContribFrameworkWebpackPlugin } = require('@profiscience/knockout-contrib-framework/support/webpack')
+
+const PRODUCTION = process.env.NODE_ENV === 'production'
+const AVAILABLE_CPUS = Math.max(os.cpus().length - 2, 2) // leave 2 CPUS free
 
 module.exports = {
+  mode: PRODUCTION ? 'production' : 'development',
   context: __dirname,
   entry: path.join(__dirname, 'src/index.ts'),
   output: {
-    filename: 'entry.[hash].js',
-    chunkFilename: 'chunk.[id].[name].[chunkhash].js',
-    path: path.join(__dirname, 'dist'),
     publicPath: PRODUCTION
       ? '/knockout-realworld/'  // gh-pages
       : '/'                     // development server
   },
-  devtool: PRODUCTION
-    ? 'source-map'
-    : 'inline-source-map',
   module: {
     rules: [
       {
         test: /\.ts$/,
-        exclude: [
-          /node_modules/,
-          /manifest\.ts/  // handled by val-loader below
-        ],
-        loader: 'happypack/loader?id=ts' // see plugins
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'cache-loader',
+            options: {
+              cacheDirectory: path.resolve(__dirname, '.cache/ts')
+            }
+          },
+          {
+            loader: 'thread-loader',
+            options: {
+              workers: Math.min(Math.floor(AVAILABLE_CPUS / 2), 4)
+            }
+          },
+          {
+            loader: 'ts-loader',
+            options: {
+              happyPackMode: true
+            }
+          }
+        ]
       },
       {
         test: /\.html$/,
@@ -58,30 +69,23 @@ module.exports = {
     ]
   },
   plugins: [
-    // magic.
-    new KnockoutContribFrameworkWebpackPlugin(),
-
-    // provide PRODUCTION constant to app, will be statically analyzable so !PRODUCTION if statements
-    // will be stripped out by the minifier in production builds
-    new DefinePlugin({ PRODUCTION }),
-
-    // happypack + ts-loader only transpiles, so fork a type-checker process as well
-    new HappyPack({
-      id: 'ts',
-      threads: 1,
-      loaders: [
-        {
-          path: 'ts-loader',
-          query: {
-            happyPackMode: true,
-            compilerOptions: {
-              target: 'es5'
-            }
-          }
-        }
-      ]
+    new KnockoutContribFrameworkWebpackPlugin({
+      /**
+       * This is actually the default value, but in order to work with a linked version of the framework,
+       * it must be specified. This is because in the framework itself __dirname resolves to the actual path,
+       * not the symlinked path.
+       */
+      context: path.resolve(__dirname, 'src')
     }),
+
+    // provide DEBUG constant to app, will be statically analyzable so `if (DEBUG)` statements
+    // will be stripped out by the minifier in production builds
+    new DefinePlugin({
+      DEBUG: !PRODUCTION
+    }),
+
     new ForkTsCheckerWebpackPlugin({
+      workers: Math.min(Math.floor(AVAILABLE_CPUS / 2), 4),
       checkSyntacticErrors: true
     }),
 
@@ -91,16 +95,7 @@ module.exports = {
     }),
 
     ...(PRODUCTION
-      ? [
-        // add resource hints in production for optimal performance
-        new ScriptExtPlugin({
-          async: ['entry.*.js'],
-          prefetch: {
-            test: /\.js$/,
-            chunks: 'async'
-          }
-        })
-      ]
+      ? []
       : [
         // readable HMR output
         new NamedModulesPlugin()
