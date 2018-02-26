@@ -52,7 +52,6 @@
       "lcov",
       "html"
     ],
-    "mapCoverage": true,
     "moduleFileExtensions": [
       "js",
       "ts"
