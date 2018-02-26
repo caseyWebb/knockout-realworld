@@ -32,9 +32,9 @@
     jsx-dom "^5.2.0"
     marked "^0.3.12"
 
-"@profiscience/knockout-contrib-components@^1.0.0-alpha.33":
-  version "1.0.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-components/-/knockout-contrib-components-1.0.0-alpha.33.tgz#348e96fcba30d7a7e80963c2e0d8f79a0edc03ed"
+"@profiscience/knockout-contrib-components@^1.0.0-alpha.34":
+  version "1.0.0-alpha.34"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-components/-/knockout-contrib-components-1.0.0-alpha.34.tgz#85b5b4d289157d8423899cdc3ecf41f16c00b0dd"
   dependencies:
     "@profiscience/knockout-contrib-components-flash-message" "^1.0.0-alpha.28"
     "@profiscience/knockout-contrib-components-markdown" "^0.0.3"
@@ -55,10 +55,10 @@
     "@profiscience/knockout-contrib-filters-date-format" "^0.0.1"
 
 "@profiscience/knockout-contrib-framework@^1.0.0-alpha.5":
-  version "1.0.0-alpha.15"
-  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-framework/-/knockout-contrib-framework-1.0.0-alpha.15.tgz#eb748f95b34aa76c5016aebbfc30d5a0b3b8229a"
+  version "1.0.0-alpha.16"
+  resolved "https://registry.yarnpkg.com/@profiscience/knockout-contrib-framework/-/knockout-contrib-framework-1.0.0-alpha.16.tgz#957853a570997bb2ebdfdf1987fc66d601e73c95"
   dependencies:
-    "@profiscience/knockout-contrib-components" "^1.0.0-alpha.33"
+    "@profiscience/knockout-contrib-components" "^1.0.0-alpha.34"
     "@profiscience/knockout-contrib-router" "^2.0.0-4"
     "@profiscience/knockout-contrib-router-middleware" "^1.0.0-alpha.11"
     "@profiscience/knockout-contrib-router-plugins" "^1.0.0-alpha.14"
@@ -357,8 +357,8 @@ ajv@^5.1.0:
     json-schema-traverse "^0.3.0"
 
 ajv@^6.1.0:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.1.1.tgz#978d597fbc2b7d0e5a5c3ddeb149a682f2abfa0e"
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.2.0.tgz#afac295bbaa0152449e522742e4547c1ae9328d2"
   dependencies:
     fast-deep-equal "^1.0.0"
     fast-json-stable-stringify "^2.0.0"
@@ -1575,7 +1575,7 @@ chalk@^1.0.0, chalk@^1.1.1, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0:
+chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.3.1.tgz#523fe2678aec7b04e8041909292fe8b17059b796"
   dependencies:
@@ -4594,8 +4594,8 @@ map-visit@^1.0.0:
     object-visit "^1.0.0"
 
 marked@^0.3.12:
-  version "0.3.12"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.12.tgz#7cf25ff2252632f3fe2406bde258e94eee927519"
+  version "0.3.16"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.16.tgz#2f188b7dfcfa6540fe9940adaf0f3b791c9a5cba"
 
 md5.js@^1.3.4:
   version "1.3.4"
@@ -5473,8 +5473,8 @@ postcss-load-plugins@^2.3.0:
     object-assign "^4.1.0"
 
 postcss-loader@^2.0.10:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-2.1.0.tgz#038c2d6d59753fef4667827fd3ae03f5dc5e6a7a"
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-2.1.1.tgz#208935af3b1d65e1abb1a870a912dd12e7b36895"
   dependencies:
     loader-utils "^1.1.0"
     postcss "^6.0.0"
@@ -5526,12 +5526,12 @@ postcss@6.0.1:
     supports-color "^3.2.3"
 
 postcss@^6.0.0, postcss@^6.0.1:
-  version "6.0.17"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.17.tgz#e259a051ca513f81e9afd0c21f7f82eda50c65c5"
+  version "6.0.19"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.19.tgz#76a78386f670b9d9494a655bf23ac012effd1555"
   dependencies:
-    chalk "^2.3.0"
+    chalk "^2.3.1"
     source-map "^0.6.1"
-    supports-color "^5.1.0"
+    supports-color "^5.2.0"
 
 prelude-ls@~1.1.2:
   version "1.1.2"
@@ -6611,8 +6611,8 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
 style-loader@^0.20.0:
-  version "0.20.1"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.20.1.tgz#33ac2bf4d5c65a8906bc586ad253334c246998d0"
+  version "0.20.2"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.20.2.tgz#851b373c187890331776e9cde359eea9c95ecd00"
   dependencies:
     loader-utils "^1.1.0"
     schema-utils "^0.4.3"
@@ -6878,8 +6878,8 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
 typescript@^2.7.1:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.1.tgz#bb3682c2c791ac90e7c6210b26478a8da085c359"
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.2.tgz#2d615a1ef4aee4f574425cdff7026edf81919836"
 
 uglify-es@^3.3.4:
   version "3.3.9"
