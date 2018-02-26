@@ -1,8 +1,10 @@
-import 'jest-fetch-mock'; (global as any).fetch = require('jest-fetch-mock')
+import * as fetch from 'jest-fetch-mock'
 import '@profiscience/knockout-contrib-observable-fn/subscribeOnce'
 import { INITIALIZED } from '@profiscience/knockout-contrib-router-plugins'
 
 import { CurrentUserModel, currentUser } from '../user'
+
+(global as any).fetch = fetch
 
 currentUser.dispose()
 
