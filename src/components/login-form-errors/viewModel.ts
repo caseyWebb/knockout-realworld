@@ -16,7 +16,7 @@ export default class LoginFormErrorsViewModel extends ViewModelConstructorBuilde
       const fields = Object.keys(errors)
       return fields.reduce((messages, field) => [
         ...messages,
-        ...(errors[field].map((e) => `${field} ${e}`))
+        ...(errors[field].map((e: string) => `${field} ${e}`))
       ], [] as string[])
     })
   }

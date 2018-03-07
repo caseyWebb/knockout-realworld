@@ -8,7 +8,6 @@ const {
   DefinePlugin,
   NamedModulesPlugin
 } = require('webpack')
-const { KnockoutContribFrameworkWebpackPlugin } = require('@profiscience/knockout-contrib-framework/support/webpack')
 
 const PRODUCTION = process.env.NODE_ENV === 'production'
 const AVAILABLE_CPUS = Math.max(os.cpus().length - 2, 2) // leave 2 CPUS free
@@ -69,15 +68,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new KnockoutContribFrameworkWebpackPlugin({
-      /**
-       * This is actually the default value, but in order to work with a linked version of the framework,
-       * it must be specified. This is because in the framework itself __dirname resolves to the actual path,
-       * not the symlinked path.
-       */
-      context: path.resolve(__dirname, 'src')
-    }),
-
     // provide DEBUG constant to app, will be statically analyzable so `if (DEBUG)` statements
     // will be stripped out by the minifier in production builds
     new DefinePlugin({
@@ -85,6 +75,7 @@ module.exports = {
     }),
 
     new ForkTsCheckerWebpackPlugin({
+      async: false,
       workers: Math.min(Math.floor(AVAILABLE_CPUS / 2), 4),
       checkSyntacticErrors: true
     }),

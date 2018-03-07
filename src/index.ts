@@ -1,14 +1,13 @@
-import { App } from '@profiscience/knockout-contrib-framework/runtime'
+import * as ko from 'knockout'
 import { Router } from '@profiscience/knockout-contrib-router'
+import 'knockout-punches'
 
-const app = new App({
-  hashbang: true,
-  activePathCSSClass: 'active',
-  base: DEBUG
-    ? ''                    // development
-    : '/knockout-realworld' // gh-pages
-})
+import 'src/components'
+import 'src/routing'
+import 'src/views'
 
-app.start({
-  isNavigating: Router.isNavigating
-})
+(window as any).ko = ko
+
+ko.options.deferUpdates = true
+ko.punches.enableAll()
+ko.applyBindings({ isNavigating: Router.isNavigating })

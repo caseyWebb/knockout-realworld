@@ -12,12 +12,14 @@
     "deploy": "./scripts/deploy.sh"
   },
   "dependencies": {
+    "@profiscience/knockout-contrib-components": "^1.0.0-alpha.34",
     "@profiscience/knockout-contrib-filters": "^0.0.2",
-    "@profiscience/knockout-contrib-framework": "^1.0.0-alpha.5",
     "@profiscience/knockout-contrib-model": "^1.0.0-alpha.8",
     "@profiscience/knockout-contrib-observable-fn": "^1.0.0-alpha.10",
     "@profiscience/knockout-contrib-querystring": "^0.0.1-alpha.8",
     "@profiscience/knockout-contrib-router": "^2.0.0-0",
+    "@profiscience/knockout-contrib-router-middleware": "^1.0.0-alpha.11",
+    "@profiscience/knockout-contrib-router-plugins": "^1.0.0-alpha.14",
     "knockout": "^3.5.0-beta",
     "knockout-punches": "^0.5.1"
   },
@@ -28,7 +30,7 @@
     "cache-loader": "^1.2.0",
     "fork-ts-checker-webpack-plugin": "^0.4.0",
     "html-loader": "^0.5.5",
-    "html-webpack-plugin": "webpack-contrib/html-webpack-plugin",
+    "html-webpack-plugin": "^3.0.6",
     "jest": "^22.3.0",
     "jest-fetch-mock": "^1.4.1",
     "jest-jquery-matchers": "^2.0.1",
