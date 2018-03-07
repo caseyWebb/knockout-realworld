@@ -6,10 +6,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "jest",
-    "build": "./scripts/build.sh",
-    "develop": "./scripts/develop.sh",
-    "deploy": "./scripts/deploy.sh"
+    "test": "NODE_ENV=testing jest",
+    "build": "NODE_ENV=production webpack -p",
+    "develop": "NODE_ENV=development webpack-dev-server --hot"
   },
   "dependencies": {
     "@profiscience/knockout-contrib-components": "^1.0.0-alpha.34",

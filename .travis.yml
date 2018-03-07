@@ -20,5 +20,12 @@ before_script:
 after_script:
 - npx codecov
 - npx -p greenkeeper-lockfile@1 greenkeeper-lockfile-upload
+deploy:
+  provider: pages
+  skip-cleanup: true
+  local-dir: dist
+  github-token: $GH_TOKEN
+  on:
+    branch: master
 notifications:
   email: false
