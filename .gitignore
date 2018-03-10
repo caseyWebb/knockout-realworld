@@ -3,7 +3,7 @@
 # Generated Files
 .cache/
 coverage/
-dist/
+# dist/
 
 # dependencies
 node_modules/
