@@ -1,5 +1,7 @@
 # ![RealWorld Example App](logo.png)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/caseyWebb/knockout-realworld.svg)](https://greenkeeper.io/)
+
 > ### [YOUR_FRAMEWORK] codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld) spec and API.
 
 
