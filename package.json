@@ -1,7 +1,7 @@
 {
   "name": "knockout-realworld",
   "version": "0.0.0",
-  "repository": "https://github.com/caseyWebb/knockout-realworld.git",
+  "repository": "caseyWebb/knockout-realworld",
   "author": "Casey Webb <notcaseywebb@gmail.com>",
   "license": "MIT",
   "private": true,

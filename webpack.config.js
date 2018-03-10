@@ -60,7 +60,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'src': path.join(__dirname, 'src/')
+      src: path.join(__dirname, 'src/'),
+      knockout$: path.join(__dirname, 'node_modules/knockout/build/output/', `knockout-latest${PRODUCTION ? '' : '.debug'}.js`)
     },
     extensions: [
       '.ts',
