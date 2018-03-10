@@ -1,9 +1,11 @@
-'use strict'
+import * as os from 'os'
+import * as path from 'path'
+import { Configuration } from 'webpack'
+// @ts-ignore
+import * as ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
+// @ts-ignore
+import * as HtmlWebpackPlugin from 'html-webpack-plugin'
 
-const os = require('os')
-const path = require('path')
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {
   DefinePlugin,
   NamedModulesPlugin
@@ -12,7 +14,7 @@ const {
 const PRODUCTION = process.env.NODE_ENV === 'production'
 const AVAILABLE_CPUS = Math.max(os.cpus().length - 2, 2) // leave 2 CPUS free
 
-module.exports = {
+const config: Configuration = {
   mode: PRODUCTION ? 'production' : 'development',
   context: __dirname,
   entry: path.join(__dirname, 'src/index.ts'),
@@ -95,3 +97,5 @@ module.exports = {
     )
   ]
 }
+
+export default config
