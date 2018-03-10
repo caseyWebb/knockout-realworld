@@ -11,6 +11,7 @@ import { currentUser } from 'src/models/user'
  * round-trips to the server.
  */
 import 'src/components/article-list'
+import 'src/components/tag-list'
 
 export default class extends ViewModelConstructorBuilder {
   public currentUser = currentUser
