@@ -5,6 +5,13 @@ import { ArticlesModel } from 'src/models/article'
 import { TagsModel } from 'src/models/tags'
 import { currentUser } from 'src/models/user'
 
+/**
+ * This isn't necessary as components will be lazy-loaded on-demand, but importing
+ * it here will inform webpack of the dependency which cuts down on the number of
+ * round-trips to the server.
+ */
+import 'src/components/article-list'
+
 export default class extends ViewModelConstructorBuilder {
   public currentUser = currentUser
   
