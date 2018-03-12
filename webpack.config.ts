@@ -21,7 +21,7 @@ const config: Configuration = {
   context: __dirname,
   entry: path.join(__dirname, 'src/index.ts'),
   output: {
-    filename: '[name].[chunkhash].js',
+    chunkFilename: '[name].[chunkhash].js',
     publicPath: PRODUCTION
       ? '/knockout-realworld/'  // gh-pages
       : '/'                     // development server
