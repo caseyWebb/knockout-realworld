@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[23],{75:function(i,s){i.exports=' <article-list params="articles: articles"></article-list> '}}]);

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{82:function(s,e,o){"use strict";o.r(e),o.d(e,"default",function(){return n});var r=o(5);class n extends r.e{constructor(){super(...arguments),this.username=ko.observable(""),this.email=ko.observable(""),this.password=ko.observable("")}}}}]);
