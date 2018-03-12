@@ -20,10 +20,10 @@ export default class extends ViewModelConstructorBuilder {
     feed: currentUser.loggedIn() ? 'user' : 'global',
     tag: ''
   })
-  public articles = new ArticlesModel(ko.pureComputed(() => ({
-    feed: this.query.feed() === 'user',
-    tag: this.query.tag()
-  })))
+  public articles = new ArticlesModel({
+    feed: ko.pureComputed(() => this.query.feed() === 'user'),
+    tag: this.query.tag
+  })
   public tags = new TagsModel({})
 
   public showTabs = ko.pureComputed(() => currentUser.loggedIn() || this.query.feed() === 'tag')
