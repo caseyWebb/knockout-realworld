@@ -21,10 +21,18 @@ const config: Configuration = {
   context: __dirname,
   entry: path.join(__dirname, 'src/index.ts'),
   output: {
+    filename: '[name].[chunkhash].js',
     publicPath: PRODUCTION
       ? '/knockout-realworld/'  // gh-pages
       : '/'                     // development server
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    },
+    runtimeChunk: true
+  },
+  recordsPath: path.join(__dirname, '.cache/records.json'),
   module: {
     rules: [
       {
@@ -93,10 +101,13 @@ const config: Configuration = {
     ...(PRODUCTION
       ? [
         new ScriptExtPlugin({
-          async: ['main.js'],
+          defaultAttribute: 'defer',
           prefetch: {
             test: /\.js$/,
             chunks: 'async'
+          },
+          inline: {
+            test: [/runtime/]
           }
         })
       ]

@@ -9,6 +9,7 @@ branches:
 cache:
   yarn: true
   directories:
+  - .cache
   - node_modules
 before_script:
 - npx -p greenkeeper-lockfile@1 greenkeeper-lockfile-update
