@@ -5,6 +5,8 @@ import { Configuration } from 'webpack'
 import * as ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 // @ts-ignore
 import * as HtmlWebpackPlugin from 'html-webpack-plugin'
+// @ts-ignore
+import * as ScriptExtPlugin from 'script-ext-html-webpack-plugin'
 
 const {
   DefinePlugin,
@@ -89,7 +91,15 @@ const config: Configuration = {
     }),
 
     ...(PRODUCTION
-      ? []
+      ? [
+        new ScriptExtPlugin({
+          async: ['main.js'],
+          prefetch: {
+            test: /\.js$/,
+            chunks: 'async'
+          }
+        })
+      ]
       : [
         // readable HMR output
         new NamedModulesPlugin()
