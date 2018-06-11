@@ -23,7 +23,7 @@
     "knockout-punches": "^0.5.1"
   },
   "devDependencies": {
-    "@types/jest": "^22.1.2",
+    "@types/jest": "^23.0.1",
     "@types/knockout": "^3.4.49",
     "@types/node": "^9.4.7",
     "@types/webpack": "^4.0.0",
