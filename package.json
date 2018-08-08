@@ -8,7 +8,9 @@
   "scripts": {
     "test": "NODE_ENV=testing jest",
     "build": "TS_NODE_PROJECT=\"tsconfig.node.json\" NODE_ENV=production webpack -p",
-    "develop": "TS_NODE_PROJECT=\"tsconfig.node.json\" NODE_ENV=development webpack-dev-server --hot"
+    "develop": "TS_NODE_PROJECT=\"tsconfig.node.json\" NODE_ENV=development webpack-dev-server --hot",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@profiscience/knockout-contrib-components": "^1.0.0-alpha.34",
@@ -20,7 +22,8 @@
     "@profiscience/knockout-contrib-router-middleware": "^1.0.0-alpha.11",
     "@profiscience/knockout-contrib-router-plugins": "^1.0.0-alpha.14",
     "knockout": "^3.5.0-beta",
-    "knockout-punches": "^0.5.1"
+    "knockout-punches": "^0.5.1",
+    "snyk": "^1.90.2"
   },
   "devDependencies": {
     "@types/jest": "^22.1.2",
@@ -80,5 +83,6 @@
         "tsConfigFile": "tsconfig.node.json"
       }
     }
-  }
+  },
+  "snyk": true
 }
