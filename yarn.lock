@@ -1513,9 +1513,9 @@ cache-base@^1.0.1:
     union-value "^1.0.0"
     unset-value "^1.0.0"
 
-cache-loader@^1.2.0:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/cache-loader/-/cache-loader-1.2.2.tgz#6d5c38ded959a09cc5d58190ab5af6f73bd353f5"
+cache-loader@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/cache-loader/-/cache-loader-1.2.3.tgz#5b3ccf4f774fe23b814ff999d47217856407c33e"
   dependencies:
     loader-utils "^1.1.0"
     mkdirp "^0.5.1"
