@@ -42,7 +42,7 @@
     "ts-jest": "^22.0.4",
     "ts-loader": "^4.0.0",
     "ts-node": "^5.0.1",
-    "tsconfig-paths": "^3.1.1",
+    "tsconfig-paths": "3.6.0",
     "typescript": "^2.7.1",
     "webpack": "^4.0.0",
     "webpack-cli": "^2.0.4",
