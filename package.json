@@ -16,7 +16,7 @@
     "@profiscience/knockout-contrib-model": "^1.0.0-alpha.8",
     "@profiscience/knockout-contrib-observable-fn": "^1.0.0-alpha.10",
     "@profiscience/knockout-contrib-querystring": "^0.0.1-alpha.8",
-    "@profiscience/knockout-contrib-router": "^2.0.0-0",
+    "@profiscience/knockout-contrib-router": "^2.0.1",
     "@profiscience/knockout-contrib-router-middleware": "^1.0.0-alpha.11",
     "@profiscience/knockout-contrib-router-plugins": "^1.0.0-alpha.14",
     "knockout": "^3.5.0-beta",
