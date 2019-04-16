@@ -287,9 +287,10 @@
   version "22.2.0"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-22.2.0.tgz#55ce83139f7ad1b48b414c3927746614c6963c0f"
 
-"@types/knockout@^3.4.49":
-  version "3.4.52"
-  resolved "https://registry.yarnpkg.com/@types/knockout/-/knockout-3.4.52.tgz#97ce4e1981ef1857a5989e0ce27afb86580621a6"
+"@types/knockout@^3.4.65":
+  version "3.4.65"
+  resolved "https://registry.yarnpkg.com/@types/knockout/-/knockout-3.4.65.tgz#670f5a458c9e8727de75c43c184dd301b487c624"
+  integrity sha512-aCVdUIIQSa4fCmiApr2u1eTnzriVy6KOHtAKB0NIgLe7/AyuwXpeLA1oTBwMf5l2G/7+WY+hffrZBQNKrVqoEQ==
 
 "@types/marked@^0.3.0":
   version "0.3.0"
