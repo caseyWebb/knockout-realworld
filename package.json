@@ -26,7 +26,7 @@
     "@types/jest": "^22.1.2",
     "@types/knockout": "^3.4.49",
     "@types/node": "^9.4.7",
-    "@types/webpack": "^4.0.0",
+    "@types/webpack": "^4.4.32",
     "cache-loader": "^1.2.0",
     "fork-ts-checker-webpack-plugin": "^0.4.0",
     "html-loader": "^0.5.5",
